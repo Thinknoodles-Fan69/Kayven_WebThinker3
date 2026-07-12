@@ -1,5 +1,6 @@
-let base
-let height
+let base;
+let height;
+
 function preload(){
     
 }
