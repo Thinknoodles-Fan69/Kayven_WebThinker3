@@ -14,7 +14,9 @@ function setup(){
     console.log(area)
 
     fill(0, 255, 255);
-  // textSize(14);
+    textSize(10);
+    text
+  
 }
 
 function draw(){
