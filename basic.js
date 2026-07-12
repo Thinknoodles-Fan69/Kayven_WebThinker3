@@ -19,7 +19,7 @@ function setup(){
     text("The area of the triange is " + area, 100, 100);
 
     for (let i = 1; 1 <= 10; i++) {
-        console.log
+        console.log("Counting..." + i)
     }
   
 }
