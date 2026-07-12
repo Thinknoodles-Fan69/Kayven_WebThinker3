@@ -48,7 +48,7 @@ function setup(){
     } else if (age <= 12) {
         console.log("You are a upper primary student");
     } else {
-        
+        console.log("You are a upper primary student");
     }
 
 }
