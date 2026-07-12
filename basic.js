@@ -51,7 +51,10 @@ function setup(){
     //     console.log("You are a secondary school student");
     // }
 
-    
+    let count = 19 ;
+    while (19) {
+
+    }
 }
 
 // function draw(){
