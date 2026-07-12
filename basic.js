@@ -8,6 +8,8 @@ function preload(){
 function setup(){
     new Canvas(800, 600);
     console.log("hello");
+
+    let area = 0.5 * base * height;
 }
 
 function draw(){
