@@ -1,4 +1,5 @@
-
+let base
+let height
 function preload(){
     
 }
