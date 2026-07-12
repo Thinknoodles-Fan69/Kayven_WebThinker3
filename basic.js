@@ -15,10 +15,10 @@ function setup(){
 
     fill(0, 255, 255);
     textSize(10);
-    text("The area of the triange is" + area, 100, 100);
+    text("The area of the triange is " + area, 100, 100);
   
 }
 
-function draw(){
-    background(220)
-}
+// function draw(){
+//     background(220)
+// }
