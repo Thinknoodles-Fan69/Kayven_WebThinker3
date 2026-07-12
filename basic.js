@@ -10,13 +10,13 @@ function setup(){
     new Canvas(800, 600);
     console.log("hello");
 
-    area = 0.5 * base * height;
-    console.log(area)
+    // area = 0.5 * base * height;
+    // console.log(area)
 
-    fill(0, 255, 255);
-    textSize(10);
-    text
-    text("The area of the triange is " + area, 100, 100);
+    // fill(0, 255, 255);
+    // textSize(10);
+    // text
+    // text("The area of the triange is " + area, 100, 100);
 
     // for (let i = 1; i <= 10; i++) {
     //     console.log("Counting..." + i)
@@ -30,9 +30,9 @@ function setup(){
     //     console.log("Counting..." + i)
     // }
 
-    for (let i = 3; i <= 46; i+=3) {
-        console.log("Counting..." + i)
-    }
+    // for (let i = 3; i <= 46; i+=3) {
+    //     console.log("Counting..." + i)
+    // }
 }
 
 // function draw(){
