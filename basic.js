@@ -34,7 +34,7 @@ function setup(){
     //     console.log("Counting..." + i)
     // }
 
-    for (let i = 3; i <= 46; i+=3) {
+    for (let i = 2; i <= 20; i+=3) {
         console.log("Counting..." + i)
     }
 }
