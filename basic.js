@@ -1,1 +1,1 @@
-new Canvas
+new Canvas()
