@@ -38,7 +38,7 @@ function setup(){
         console.log("Counting..." + i);
         let sum = sum + i;
         console.log("The sum is " + sum)
-        Text()
+        Text("The sum is " + sum)
 
     }
 
