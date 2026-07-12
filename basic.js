@@ -34,9 +34,11 @@ function setup(){
     //     console.log("Counting..." + i)
     // }
 
-    for (let i = 2; i <= 20; i+=3) {
+    for (let i = 2; i <= 20; i+=2) {
         console.log("Counting..." + i)
+        
     }
+
 }
 
 // function draw(){
