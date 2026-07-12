@@ -37,10 +37,10 @@ function setup(){
     for (let i = 2; i <= 20; i+=2) {
         console.log("Counting..." + i);
         sum = sum + i;
-        console.log("The sum is " + sum)
-        Text("The sum is " + sum)
-
     }
+
+    console.log("The sum is " + sum)
+    Text("The sum is " + sum)
 
 }
 
