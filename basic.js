@@ -26,13 +26,13 @@ function setup(){
     //     console.log("Counting..." + i)
     // }
 
-    for (let i = 20; i >= 1; i--) {
-        console.log("Counting..." + i)
-    }
-
-    // for (let i = 3; i >= 46; i+3) {
+    // for (let i = 20; i >= 1; i--) {
     //     console.log("Counting..." + i)
     // }
+
+    for (let i = 3; i >= 46; i) {
+        console.log("Counting..." + i)
+    }
 }
 
 // function draw(){
