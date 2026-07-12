@@ -1,1 +1,7 @@
-new Canvas()
+function preload(){
+
+}
+
+function setup(){
+    new Canvas
+}
