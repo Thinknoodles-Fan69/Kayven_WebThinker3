@@ -34,13 +34,13 @@ function setup(){
     //     console.log("Counting..." + i)
     // }
 
-    for (let i = 2; i <= 20; i+=2) {
-        console.log("Counting..." + i);
-        sum = sum + i;
-    }
+    // for (let i = 2; i <= 20; i+=2) {
+    //     console.log("Counting..." + i);
+    //     sum = sum + i;
+    // }
 
-    console.log("The sum is " + sum)
-    text("The sum is " + sum, 100, 100)
+    // console.log("The sum is " + sum)
+    // text("The sum is " + sum, 100, 100)
 
 }
 
