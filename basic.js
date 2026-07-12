@@ -44,8 +44,8 @@ function setup(){
 
     let age = 67;
     if (age <= 9) {
-        console.log("You are a")
-    }
+        console.log("You are a lower primary student");
+    } else if (age <= 12)
 
 }
 
