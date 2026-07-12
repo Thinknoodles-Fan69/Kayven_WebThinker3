@@ -44,7 +44,7 @@ function setup(){
 
     let age = 67;
     if (age <= 9) {
-        console.log()
+        console.log("You are a")
     }
 
 }
