@@ -26,7 +26,7 @@ function setup(){
         console.log("Counting..." + i)
     }
 
-    for (let i = 20; i <= i; i++) {
+    for (let i = 20; i <= 1; i++) {
         console.log("Counting..." + i)
     }
 }
