@@ -1,6 +1,7 @@
 let base = 10;
 let height = 5;
 let area;
+let sum;
 
 function preload(){
     
