@@ -11,6 +11,8 @@ function setup(){
     console.log("hello");
 
     area = 0.5 * base * height;
+    console.log(area)
+    
 }
 
 function draw(){
