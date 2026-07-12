@@ -40,7 +40,7 @@ function setup(){
     }
 
     console.log("The sum is " + sum)
-    text("The sum is " + sum)
+    text("The sum is " + sum, 100, 100)
 
 }
 
