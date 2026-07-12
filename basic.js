@@ -18,9 +18,9 @@ function setup(){
     text
     text("The area of the triange is " + area, 100, 100);
 
-    for (let i = 1; i <= 10; i++) {
-        console.log("Counting..." + i)
-    }
+    // for (let i = 1; i <= 10; i++) {
+    //     console.log("Counting..." + i)
+    // }
   
     for (let i = 10; i <= 20; i++) {
         console.log("Counting..." + i)
@@ -30,7 +30,7 @@ function setup(){
         console.log("Counting..." + i)
     }
 
-    for (let i = 3; i >= 1; i--) {
+    for (let i = 3; i >= 46; i+3) {
         console.log("Counting..." + i)
     }
 }
