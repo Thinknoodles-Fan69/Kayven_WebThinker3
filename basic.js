@@ -15,7 +15,7 @@ function setup(){
 
     fill(0, 255, 255);
     textSize(10);
-    text(area, 50, 50);
+    text(area, 100, 100);
   
 }
 
