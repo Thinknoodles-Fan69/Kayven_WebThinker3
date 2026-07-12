@@ -29,6 +29,10 @@ function setup(){
     for (let i = 20; i >= 1; i--) {
         console.log("Counting..." + i)
     }
+
+    for (let i = 3; i >= 1; i--) {
+        console.log("Counting..." + i)
+    }
 }
 
 // function draw(){
