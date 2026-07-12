@@ -42,7 +42,10 @@ function setup(){
     // console.log("The sum is " + sum)
     // text("The sum is " + sum, 100, 100)
 
-    
+    let age = 67;
+    if (age <= 9) {
+        
+    }
 
 }
 
