@@ -42,15 +42,16 @@ function setup(){
     // console.log("The sum is " + sum)
     // text("The sum is " + sum, 100, 100)
 
-    let age = 14;
-    if (age <= 9) {
-        console.log("You are a lower primary student");
-    } else if (age <= 12) {
-        console.log("You are a upper primary student");
-    } else {
-        console.log("You are a secondary school student");
-    }
+    // let age = 14;
+    // if (age <= 9) {
+    //     console.log("You are a lower primary student");
+    // } else if (age <= 12) {
+    //     console.log("You are a upper primary student");
+    // } else {
+    //     console.log("You are a secondary school student");
+    // }
 
+    
 }
 
 // function draw(){
