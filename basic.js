@@ -52,7 +52,7 @@ function setup(){
     // }
 
     let count = 19 ;
-    while (19) {
+    while (count > 1) {
 
     }
 }
