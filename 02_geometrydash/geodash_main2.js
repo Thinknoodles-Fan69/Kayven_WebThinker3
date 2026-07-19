@@ -14,7 +14,8 @@ function setup() {
 
     box = new Sprite(50, height, 50, 50);
     box.img = cube
-    box
+    box.function = 0;
+    box.bounciness
 }
 
 function draw() {
