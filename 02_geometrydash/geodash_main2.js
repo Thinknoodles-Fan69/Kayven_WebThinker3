@@ -33,7 +33,9 @@ function setup() {
     box.y = startCoordinates[1]
 
     group = new Group();
-    
+    ground.tile = "g";
+
+    ground
 }
 
 function draw() {
