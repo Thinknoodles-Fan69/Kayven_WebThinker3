@@ -62,7 +62,7 @@ function setup() {
     finishLine.w = 50;
     finishLine.h = 1200;
     finishLine.visible = false;
-    finishLine
+    finishLine.collider = "static";
 
 
 }
