@@ -14,6 +14,7 @@ let finishLine;
 function preload() {
     cube = loadImage("02_geometrydash/assets/cube.png")
     bg = loadImage("02_geometrydash/assets/geobg.png")
+    tileMap1 = loadStrings("")
 }
 
 function setup() {
