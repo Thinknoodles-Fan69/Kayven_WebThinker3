@@ -35,6 +35,7 @@ function setup() {
     group = new Group();
     ground.tile = "g";
 
+    ground.w = 50;
     ground
 }
 
