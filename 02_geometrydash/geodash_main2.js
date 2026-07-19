@@ -22,18 +22,16 @@ function setup() {
     world.gravity.y = 32;
 
     box = new Sprite(50, height, 50, 50);
-    box.img = cube
-    box.function = 0;
+    box.img = cube;
     box.bounciness = 0;
     box.collider = "none";
 
-    startCoordinates = [50, height - box.height/2]
+    let startCoordinates = [50, height - box.height / 2];
     box.x = startCoordinates[0];
-    box.y = startCoordinates[1]
+    box.y = startCoordinates[1];
 
-    group = new Group();
+    ground = new Group();
     ground.tile = "g";
-
     ground.w = 50;
     ground.h = 50;
     ground.collider = "static";
@@ -42,7 +40,7 @@ function setup() {
 
     new Tiles(tileMap1, 0, 0, 50, 50);
 
-    orb = new Group();
+    orbs = new Group();
     orbs.tile = "o";
     orbs.d = 24;
     orbs.collider = "static";
@@ -62,13 +60,11 @@ function setup() {
     finishLine.h = 1200;
     finishLine.visible = false;
     finishLine.collider = "static";
-
-
 }
 
 function draw() {
     clear();
-    Image(bg, 0, 0, 800, 600);
+    image(bg, 0, 0, 800, 600);
 }
 
 
