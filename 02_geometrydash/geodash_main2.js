@@ -7,7 +7,8 @@ let tileMap1;
 let spike;
 let ground;
 let orbs;
-let sharp
+let sharp;
+let finishLine;
 
 
 function preload() {
