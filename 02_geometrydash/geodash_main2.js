@@ -1,21 +1,6 @@
-let box
-
-//player box
-
-
-// game variables
-
-
-// world building groups
-
-
-// image sprites
-
-
-// menu
-
-
-// sound assets
+let box;
+let cube;
+let bg;
 
 
 function preload() {
