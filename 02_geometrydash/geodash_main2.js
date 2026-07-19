@@ -36,7 +36,9 @@ function setup() {
     ground.tile = "g";
 
     ground.w = 50;
-    ground
+    ground.h = 50;
+    ground.collider = "static";
+    ground.colour = black;
 }
 
 function draw() {
