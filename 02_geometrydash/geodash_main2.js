@@ -39,9 +39,9 @@ function setup() {
     ground.h = 50;
     ground.collider = "static";
     ground.color = "black";
-    ground.stroke = "rgba(0, 0, 0, 0)"
+    ground.stroke = "rgba(0, 0, 0, 0)";
 
-    new Tiles(timeMap1, 0, 0, 50, 50)
+    new Tiles(timeMap1, 0, 0, 50, 50);
 }
 
 function draw() {
