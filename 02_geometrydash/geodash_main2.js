@@ -64,7 +64,7 @@ function setup() {
 //     finishLine.collider = "static";
 
 
-// }
+}
 
 // function draw() {
 //     clear();
