@@ -60,8 +60,8 @@ function setup() {
     finishLine = new Group();
     finishLine.tile = "f";
     finishLine.w = 50
-    finishLine
-    finishLine
+    finishLine.h = 1200;
+    finishLine.visible
     finishLine
     finishLine
     finishLine
