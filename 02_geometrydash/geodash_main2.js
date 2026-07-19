@@ -3,6 +3,9 @@ const { startTransition } = require("react");
 let box;
 let cube;
 let bg;
+let tileMap1;
+let spike;
+
 
 
 function preload() {
