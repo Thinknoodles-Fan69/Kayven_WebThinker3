@@ -50,6 +50,8 @@ function setup() {
     orbs.color = "white";
     orbs.strokeWeight = 0;
 
+    
+
 }
 
 function draw() {
