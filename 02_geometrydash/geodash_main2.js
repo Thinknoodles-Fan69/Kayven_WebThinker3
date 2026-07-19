@@ -59,11 +59,9 @@ function setup() {
 
     finishLine = new Group();
     finishLine.tile = "f";
-    finishLine.w = 50
+    finishLine.w = 50;
     finishLine.h = 1200;
-    finishLine.visible
-    finishLine
-    finishLine
+    finishLine.visible = false;
     finishLine
 
 
