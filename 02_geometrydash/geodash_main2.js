@@ -15,7 +15,10 @@ function setup() {
     box = new Sprite(50, height, 50, 50);
     box.img = cube
     box.function = 0;
-    box.bounciness
+    box.bounciness = 0;
+    box.collider = "none";
+
+    startCoordinates
 }
 
 function draw() {
