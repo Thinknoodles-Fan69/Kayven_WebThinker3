@@ -54,6 +54,9 @@ function setup() {
     sharp.tile = "s";
     sharp.h = 25;
     sharp.w = 25;
+    sharp.img = spike;
+    sharp.collider = "static";
+    
 
 }
 
