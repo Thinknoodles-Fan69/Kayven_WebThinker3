@@ -44,6 +44,8 @@ function setup() {
     new Tiles(timeMap1, 0, 0, 50, 50);
 
     orb = new Group();
+    orbs.tile = "o";
+    
 }
 
 function draw() {
