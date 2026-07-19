@@ -58,7 +58,15 @@ function setup() {
     sharp.collider = "static";
 
     finishLine = new Group();
-    
+    finishLine
+    finishLine
+
+    finishLine
+
+    finishLine
+
+    finishLine
+
 
 }
 
