@@ -40,7 +40,8 @@ function setup() {
     ground.collider = "static";
     ground.color = "black";
     ground.stroke = "rgba(0, 0, 0, 0)"
-    
+
+    new Tiles(timeMap1, 0, 0, 50, 50)
 }
 
 function draw() {
