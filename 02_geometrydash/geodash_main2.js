@@ -22,7 +22,7 @@ function setup() {
     world.gravity.y = 32;
 
     box = new Sprite(50, height, 50, 50);
-    box.img = cube
+    box.img = cube;
     box.function = 0;
     box.bounciness = 0;
     box.collider = "none";
