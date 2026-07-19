@@ -9,7 +9,7 @@ function preload() {
 }
 
 function setup() {
-  
+    new Canvas(700, 600)
 }
 
 function draw() {
