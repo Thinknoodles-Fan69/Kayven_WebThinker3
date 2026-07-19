@@ -11,10 +11,10 @@ let finishLine;
 
 
 function preload() {
-    cube = loadImage("02_geometrydash/assets/cube.png")
-    bg = loadImage("02_geometrydash/assets/geobg.png")
-    tileMap1 = loadStrings("02_geometrydash/stages/tiles1.txt")
-    spike = loadImage("02_geometrydash/assets/spike.png")
+    cube = loadImage("assets/cube.png")
+    bg = loadImage("assets/geobg.png")
+    tileMap1 = loadStrings("stages/tiles1.txt")
+    spike = loadImage("assets/spike.png")
 }
 
 function setup() {
@@ -40,7 +40,7 @@ function setup() {
     ground.color = "black";
     ground.stroke = "rgba(0, 0, 0, 0)";
 
-    new Tiles(timeMap1, 0, 0, 50, 50);
+    new Tiles(tileMap1, 0, 0, 50, 50);
 
     orb = new Group();
     orbs.tile = "o";
