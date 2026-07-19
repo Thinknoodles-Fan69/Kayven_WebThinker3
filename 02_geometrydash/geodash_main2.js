@@ -22,7 +22,7 @@ function setup() {
 
     startCoordinates = [50, height - box.height/2]
     box.x = startCoordinates[0];
-    box.y = startCoordinates
+    box.y = startCoordinates[1]
 }
 
 function draw() {
