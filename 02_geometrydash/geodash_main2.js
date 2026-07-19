@@ -1,3 +1,5 @@
+const { startTransition } = require("react");
+
 let box;
 let cube;
 let bg;
@@ -19,7 +21,8 @@ function setup() {
     box.collider = "none";
 
     startCoordinates = [50, height - box.height/2]
-    box
+    box.x = startCoordinates[0];
+    box.y = startCoordinates
 }
 
 function draw() {
