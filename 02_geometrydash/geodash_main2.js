@@ -38,7 +38,8 @@ function setup() {
     ground.w = 50;
     ground.h = 50;
     ground.collider = "static";
-    ground.colour = black;
+    ground.color = "black";
+    ground.stroke = "rgba("
 }
 
 function draw() {
