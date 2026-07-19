@@ -17,59 +17,59 @@ function preload() {
     spike = loadImage("02_geometrydash/assets/spike.png")
 }
 
-function setup() {
-    new Canvas(700, 600);
-    world.gravity.y = 32;
+// function setup() {
+//     new Canvas(700, 600);
+//     world.gravity.y = 32;
 
-    box = new Sprite(50, height, 50, 50);
-    box.img = cube
-    box.function = 0;
-    box.bounciness = 0;
-    box.collider = "none";
+//     box = new Sprite(50, height, 50, 50);
+//     box.img = cube
+//     box.function = 0;
+//     box.bounciness = 0;
+//     box.collider = "none";
 
-    startCoordinates = [50, height - box.height/2]
-    box.x = startCoordinates[0];
-    box.y = startCoordinates[1]
+//     startCoordinates = [50, height - box.height/2]
+//     box.x = startCoordinates[0];
+//     box.y = startCoordinates[1]
 
-    group = new Group();
-    ground.tile = "g";
+//     group = new Group();
+//     ground.tile = "g";
 
-    ground.w = 50;
-    ground.h = 50;
-    ground.collider = "static";
-    ground.color = "black";
-    ground.stroke = "rgba(0, 0, 0, 0)";
+//     ground.w = 50;
+//     ground.h = 50;
+//     ground.collider = "static";
+//     ground.color = "black";
+//     ground.stroke = "rgba(0, 0, 0, 0)";
 
-    new Tiles(timeMap1, 0, 0, 50, 50);
+//     new Tiles(timeMap1, 0, 0, 50, 50);
 
-    orb = new Group();
-    orbs.tile = "o";
-    orbs.d = 24;
-    orbs.collider = "static";
-    orbs.color = "white";
-    orbs.strokeWeight = 0;
+//     orb = new Group();
+//     orbs.tile = "o";
+//     orbs.d = 24;
+//     orbs.collider = "static";
+//     orbs.color = "white";
+//     orbs.strokeWeight = 0;
 
-    sharp = new Group();
-    sharp.tile = "s";
-    sharp.h = 25;
-    sharp.w = 25;
-    sharp.img = spike;
-    sharp.collider = "static";
+//     sharp = new Group();
+//     sharp.tile = "s";
+//     sharp.h = 25;
+//     sharp.w = 25;
+//     sharp.img = spike;
+//     sharp.collider = "static";
 
-    finishLine = new Group();
-    finishLine.tile = "f";
-    finishLine.w = 50;
-    finishLine.h = 1200;
-    finishLine.visible = false;
-    finishLine.collider = "static";
+//     finishLine = new Group();
+//     finishLine.tile = "f";
+//     finishLine.w = 50;
+//     finishLine.h = 1200;
+//     finishLine.visible = false;
+//     finishLine.collider = "static";
 
 
-}
+// }
 
-function draw() {
-    clear();
-    Image(bg, 0, 0, 800, 600);
-}
+// function draw() {
+//     clear();
+//     Image(bg, 0, 0, 800, 600);
+// }
 
 
 
