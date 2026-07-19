@@ -17,15 +17,15 @@ function preload() {
     spike = loadImage("02_geometrydash/assets/spike.png")
 }
 
-// function setup() {
-//     new Canvas(700, 600);
-//     world.gravity.y = 32;
+function setup() {
+    new Canvas(700, 600);
+    world.gravity.y = 32;
 
-//     box = new Sprite(50, height, 50, 50);
-//     box.img = cube
-//     box.function = 0;
-//     box.bounciness = 0;
-//     box.collider = "none";
+    box = new Sprite(50, height, 50, 50);
+    box.img = cube
+    box.function = 0;
+    box.bounciness = 0;
+    box.collider = "none";
 
 //     startCoordinates = [50, height - box.height/2]
 //     box.x = startCoordinates[0];
@@ -70,14 +70,5 @@ function preload() {
 //     clear();
 //     Image(bg, 0, 0, 800, 600);
 // }
-
-
-
-
-
-
-
-
-
 
 
