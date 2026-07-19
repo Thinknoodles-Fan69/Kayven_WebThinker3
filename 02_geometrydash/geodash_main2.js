@@ -5,7 +5,9 @@ let cube;
 let bg;
 let tileMap1;
 let spike;
-
+let ground;
+let orbs;
+let sharp
 
 
 function preload() {
