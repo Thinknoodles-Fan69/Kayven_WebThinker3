@@ -31,6 +31,9 @@ function setup() {
     startCoordinates = [50, height - box.height/2]
     box.x = startCoordinates[0];
     box.y = startCoordinates[1]
+
+    group = new Group();
+    
 }
 
 function draw() {
