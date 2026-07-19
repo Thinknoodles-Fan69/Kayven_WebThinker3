@@ -57,7 +57,8 @@ function setup() {
     sharp.img = spike;
     sharp.collider = "static";
 
-    finishLine
+    finishLine = new Group();
+    
 
 }
 
