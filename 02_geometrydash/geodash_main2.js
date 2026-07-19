@@ -4,7 +4,7 @@ let bg;
 
 
 function preload() {
-    cube = loadImage 
+    cube = loadImage("")
 }
 
 function setup() {
