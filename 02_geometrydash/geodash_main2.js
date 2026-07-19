@@ -17,8 +17,8 @@ function preload() {
     spike = loadImage("02_geometrydash/assets/spike.png")
 }
 
-function setup() {
-    // new Canvas(700, 600);
+// function setup() {
+//     new Canvas(700, 600);
     // world.gravity.y = 32;
 
     // box = new Sprite(50, height, 50, 50);
@@ -64,7 +64,7 @@ function setup() {
 //     finishLine.collider = "static";
 
 
-}
+// }
 
 // function draw() {
 //     clear();
