@@ -42,6 +42,8 @@ function setup() {
     ground.stroke = "rgba(0, 0, 0, 0)";
 
     new Tiles(timeMap1, 0, 0, 50, 50);
+
+    orb = new Group();
 }
 
 function draw() {
