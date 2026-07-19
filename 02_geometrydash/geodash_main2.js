@@ -5,7 +5,7 @@ let bg;
 
 function preload() {
     cube = loadImage("02_geometrydash/assets/cube.png")
-    bg = loadImage
+    bg = loadImage("02_geometrydash/assets/geobg.png")
 }
 
 function setup() {
