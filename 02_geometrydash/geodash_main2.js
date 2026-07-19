@@ -51,7 +51,9 @@ function setup() {
     orbs.strokeWeight = 0;
 
     sharp = new Group();
-    sharp = "s"
+    sharp.tile = "s";
+    sharp.h = 25;
+    sharp.w = 25;
 
 }
 
