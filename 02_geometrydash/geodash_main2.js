@@ -70,7 +70,7 @@ function draw() {
     box.vel.x = 8;
 
     if (box.x >= width/2) {
-        CanvasCaptureMediaStreamTrack.x
+        camera.x
     }
 }
 
