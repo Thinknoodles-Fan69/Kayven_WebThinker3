@@ -60,7 +60,8 @@ function setup() {
     finishLine.h = 1200;
     finishLine.visible = false;
     finishLine.collider = "static"; 
-     new Tiles(tileMap1, 0, 0, 50, 50);
+    
+    new Tiles(tileMap1, 0, 0, 50, 50);
 }
 
 function draw() {
@@ -74,6 +75,11 @@ function draw() {
         camera.x = box.x;
     } else {
         camera.x = width / 2;
+    }
+
+    if ((kb.presses("space") || mouse.presses()) && jumpChance > 0){
+        box.vel.y = -10;
+        
     }
 }
 
