@@ -111,7 +111,8 @@ function resetGame() {
             let leftEdgeHeight = tile.y - tile.h / 2;
 
             if (box.x <leftEdge && box.y > leftEdgeHeight) {
-                
+                resetGame();
+                break;
             }
         }
     }
