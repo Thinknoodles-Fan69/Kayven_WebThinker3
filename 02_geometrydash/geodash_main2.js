@@ -68,6 +68,8 @@ function draw() {
 
     box.collider = "dynamic";
     box.vel.x = 8;
+
+    if (box.x >= width/2)
 }
 
 
