@@ -1,3 +1,4 @@
+const MAX_JUMP = 1;
 
 let box;
 let cube;
@@ -79,7 +80,7 @@ function draw() {
 
     if ((kb.presses("space") || mouse.presses()) && jumpChance > 0){
         box.vel.y = -10;
-        
+
     }
 }
 
