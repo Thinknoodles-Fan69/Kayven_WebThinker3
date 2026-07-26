@@ -105,8 +105,9 @@ function resetGame() {
     camera.x = width / 2
 
     for (let tile of ground) {
+
         if(box.colliding(tile)){
-            
+            let leftEdge
         }
     }
 }
