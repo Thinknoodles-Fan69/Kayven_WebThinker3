@@ -105,7 +105,9 @@ function draw() {
         }
     }
 
-    
+    for (let orb of orbs) {
+
+    }
 }
 
 
