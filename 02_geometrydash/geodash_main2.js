@@ -85,7 +85,7 @@ function draw() {
     }
 
     if (box.collies(ground) && jumpChance < MAX_JUMP) {
-        
+        jumpChance = MAX_JUMP;
     }
 }
 
