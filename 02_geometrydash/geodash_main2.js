@@ -95,7 +95,9 @@ function draw() {
 
 
 
-
+function resetGame() {
+    
+}
 
 
 
