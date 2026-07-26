@@ -80,7 +80,8 @@ function draw() {
 
     if ((kb.presses("space") || mouse.presses()) && jumpChance > 0){
         box.vel.y = -10;
-        box.rotateTo(box.rotation + 359)
+        box.rotateTo(box.rotation + 359, 15);
+        jump
     }
 }
 
