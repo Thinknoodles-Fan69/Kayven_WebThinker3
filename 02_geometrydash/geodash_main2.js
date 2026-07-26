@@ -9,7 +9,7 @@ let ground;
 let orbs;
 let sharp;
 let finishLine;
-
+let startCoordinates;
 
 function preload() {
     cube = loadImage("assets/cube.png");
