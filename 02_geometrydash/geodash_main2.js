@@ -108,7 +108,7 @@ function resetGame() {
 
         if(box.colliding(tile)){
             let leftEdge = tile.x - tile.w / 2;
-            
+            let leftEdgeHeight = tile.y - tile.h
         }
     }
 }
