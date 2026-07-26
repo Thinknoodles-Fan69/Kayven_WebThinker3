@@ -91,6 +91,19 @@ function draw() {
     if (box.collides(sharp)) {
         resetGame()
     }
+
+      for (let tile of ground) {
+
+        if(box.colliding(tile)){
+            let leftEdge = tile.x - tile.w / 2;
+            let leftEdgeHeight = tile.y - tile.h / 2;
+
+            if (box.x <leftEdge && box.y > leftEdgeHeight) {
+                resetGame();
+                break;
+            }
+        }
+    }
 }
 
 
@@ -104,18 +117,7 @@ function resetGame() {
     jumpChance = MAX_JUMP;
     camera.x = width / 2
 
-    for (let tile of ground) {
-
-        if(box.colliding(tile)){
-            let leftEdge = tile.x - tile.w / 2;
-            let leftEdgeHeight = tile.y - tile.h / 2;
-
-            if (box.x <leftEdge && box.y > leftEdgeHeight) {
-                resetGame();
-                break;
-            }
-        }
-    }
+  
 }
 
 
