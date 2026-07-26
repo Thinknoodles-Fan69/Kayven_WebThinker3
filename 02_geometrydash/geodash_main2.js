@@ -38,7 +38,7 @@ function setup() {
     ground.color = "black";
     ground.stroke = "rgba(0, 0, 0, 0)";
 
-    new Tiles(tileMap1, 0, 0, 50, 50);
+   
 
     orbs = new Group();
     orbs.tile = "o";
@@ -59,7 +59,8 @@ function setup() {
     finishLine.w = 50;
     finishLine.h = 1200;
     finishLine.visible = false;
-    finishLine.collider = "static";
+    finishLine.collider = "static"; 
+     new Tiles(tileMap1, 0, 0, 50, 50);
 }
 
 function draw() {
