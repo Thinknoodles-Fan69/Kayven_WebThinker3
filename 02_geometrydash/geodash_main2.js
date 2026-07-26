@@ -103,6 +103,8 @@ function resetGame() {
 
     jumpChance = MAX_JUMP;
     camera.x = width / 2
+
+    for (let tile of ground)
 }
 
 
