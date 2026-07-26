@@ -99,7 +99,9 @@ function resetGame() {
     box.rotation = 0;
 
     box.x = startCoordinates[0]
-    box.y = start
+    box.y = startCoordinates[1]
+
+    jumpChance = MAX_JUMP
 }
 
 
