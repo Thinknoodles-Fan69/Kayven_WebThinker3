@@ -96,7 +96,9 @@ function draw() {
 
 
 function resetGame() {
-    
+    box.rotation = 0;
+
+    box.x = startCoordinates
 }
 
 
