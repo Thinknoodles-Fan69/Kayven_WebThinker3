@@ -3,10 +3,10 @@
                                                                                                                                                   gggg     gggg        gggggggg
                                                                                                                                                   ssss     ssss                               s
                                                                                                                                              gggggggggggggggggggggg                gggggggggggg            
-                                                                                                                                       g     g                    ggggggggggggggggg           g   ggggggggg
-                                                                                                                                 g           g                                                g
+                                                                                                                                       g     g                    ggggggggggggggggg           g            s
+                                                                                                                                 g           g                                                g    ggggggggg
                                                                                                                            g                 g                                                g
-                                                                                                                     g                       g                                                g
+                                                                                                                     g                       g                                                g              gggggggggggg
                                                      g                                            s            g                             g                                                g
                                                g     g                              s        gggggggggggggg                                  g                                                g
                 s           ss           gsssssgsssssg               ss     gggggggggggggg   ggggggggggggggssssssssssssssssssssssssssssssssssg                                                gssssssssssssssssssssssssssssssssssss                                              
