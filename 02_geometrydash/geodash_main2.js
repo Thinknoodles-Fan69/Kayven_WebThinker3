@@ -98,10 +98,11 @@ function draw() {
 function resetGame() {
     box.rotation = 0;
 
-    box.x = startCoordinates[0]
-    box.y = startCoordinates[1]
+    box.x = startCoordinates[0];
+    box.y = startCoordinates[1];
 
-    jumpChance = MAX_JUMP
+    jumpChance = MAX_JUMP;
+    camera.x = width / 2
 }
 
 
