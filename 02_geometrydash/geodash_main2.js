@@ -83,6 +83,10 @@ function draw() {
         box.rotateTo(box.rotation + 359, 15);
         jumpChance = -1;
     }
+
+    if (box.collies(ground) && jumpChance < MAX_JUMP) {
+        
+    }
 }
 
 
