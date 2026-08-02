@@ -69,6 +69,8 @@ function setup() {
     finishLine.collider = "static"; 
     
     new Tiles(tileMap1, 0, 0, 50, 50);
+
+    startSprite = new Sprite(50, height/2, 50, 50);
 }
 
 function draw() {
