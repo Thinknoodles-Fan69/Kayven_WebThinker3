@@ -165,3 +165,10 @@ function resetGame() {
 
   
 }
+
+function triggerGameOver() {
+    if(!gameOver) {
+        
+    }
+
+}
