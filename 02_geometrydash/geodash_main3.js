@@ -155,7 +155,7 @@ function resetGame() {
     for (let orb of orbs) {
         orb.visible = true;
         orb.collider = "static";
-0    }
+    }
 
   
 }
