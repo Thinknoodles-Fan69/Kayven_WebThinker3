@@ -18,6 +18,9 @@ let endGameImg;
 let startGame = false;
 let gameOver = false;
 
+let level = 1;
+let lastLevel = 2;
+
 function preload() {
     cube = loadImage("assets/cube.png");
     bg = loadImage("assets/geobg.png");
@@ -25,6 +28,7 @@ function preload() {
     spike = loadImage("assets/spike.png");
     startGameImg = loadImage("assets/startgame.png");
     endGameImg = loadImage("assets/clear.png");
+    tileMap2 = loadStrings("stages/tiles2.txt");
 }
 
 function setup() {
@@ -145,7 +149,19 @@ function draw() {
                 triggerGameOver();
             }
 
-        
+        if (gameOver) {
+            if (frameCount - endTimer > 120) {
+                if (endSprite) {
+                    endSprite.remove();
+                }
+                staertGame = false;
+                gameOver = false;
+                resetGame();
+
+                level += 1;
+                loadLevel();        
+            }
+        }
     }
 
 
@@ -195,3 +211,4 @@ function triggerGameOver() {
     }
 
 }
+
