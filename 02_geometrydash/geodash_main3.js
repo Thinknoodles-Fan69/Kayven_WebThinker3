@@ -178,7 +178,8 @@ function triggerGameOver() {
             endSprite.remove();
 
         }
-        endSprite = new Sprite(width / 2, height / 2, 190, 90);
+        endSprite = new Sprite(box.x, height / 2, 126, 24);
+        
     }
 
 }
