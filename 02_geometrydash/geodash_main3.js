@@ -21,7 +21,7 @@ function preload() {
     tileMap1 = loadStrings("stages/tiles1.txt");
     spike = loadImage("assets/spike.png");
     startGameImg = loadImage("assets/startgame.png");
-    endGamweImg = loadImage("assets/endgame.png");
+    endGamweImg = loadImage("assets/clear.png");
 }
 
 function setup() {
