@@ -89,7 +89,7 @@ function draw() {
                 startSprite.visible = false;
             }
         }
-    }
+    
     if (startGame) {
         box.collider = "dynamic";
         box.vel.x = 8;
@@ -135,6 +135,7 @@ function draw() {
                 jumpChance = MAX_JUMP
             }
         }
+    }
 }
 
 
