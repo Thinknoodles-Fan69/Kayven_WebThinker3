@@ -172,7 +172,11 @@ function triggerGameOver() {
 
         box.vel.x = 0;
         jumpChance = 0;
-        endTimer = fra
+        endTimer = frameCount;
+
+        if (endSprite) {
+            
+        }
     }
 
 }
