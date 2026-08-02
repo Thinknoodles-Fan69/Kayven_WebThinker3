@@ -15,6 +15,9 @@ let endSprite;
 let startGameImg;
 let endGameImg;
 
+let startGame = false;
+
+
 function preload() {
     cube = loadImage("assets/cube.png");
     bg = loadImage("assets/geobg.png");
