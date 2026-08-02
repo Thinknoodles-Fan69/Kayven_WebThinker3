@@ -175,8 +175,10 @@ function triggerGameOver() {
         endTimer = frameCount;
 
         if (endSprite) {
-            
+            endSprite.remove();
+
         }
+        endSprite = new Sprite(width / 2, height / 2, 190, 90);
     }
 
 }
