@@ -135,7 +135,7 @@ function draw() {
                 jumpChance = MAX_JUMP
             }
         }
-    }
+}
 
 
 
