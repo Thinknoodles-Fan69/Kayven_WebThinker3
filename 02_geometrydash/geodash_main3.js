@@ -168,6 +168,7 @@ function resetGame() {
 
 function triggerGameOver() {
     if(!gameOver) {
+        gameOver = true;
         
     }
 
