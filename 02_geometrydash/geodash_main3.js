@@ -91,54 +91,55 @@ function draw() {
         }
     }
     if (startGame) {
-    box.collider = "dynamic";
-    box.vel.x = 8;
+            box.collider = "dynamic";
+        box.vel.x = 8;
 
-    if (box.x >= width/2) {
-        camera.x = box.x;
-    } else {
-        camera.x = width / 2;
-    }
+        if (box.x >= width/2) {
+            camera.x = box.x;
+        } else {
+            camera.x = width / 2;
+        }
 
-    if ((kb.presses('space') || mouse.presses()) && jumpChance > 0){
-        box.vel.y = -10;
-        box.rotateTo(box.rotation + 179, 15);
-        jumpChance -=   1;
-    }
+        if ((kb.presses('space') || mouse.presses()) && jumpChance > 0){
+            box.vel.y = -10;
+            box.rotateTo(box.rotation + 179, 15);
+            jumpChance -=   1;
+        }
 
-    if (box.collides(ground) && jumpChance < MAX_JUMP) {
-        jumpChance = MAX_JUMP;
-    }
+        if (box.collides(ground) && jumpChance < MAX_JUMP) {
+            jumpChance = MAX_JUMP;
+        }
 
-    if (box.collides(sharp)) {
-        resetGame()
-    }
+            if (box.collides(sharp)) {
+            resetGame()
+        }
 
-      for (let tile of ground) {
+        for (let tile of ground) {
 
-        if(box.colliding(tile)){
-            let leftEdge = tile.x - tile.w / 2;
-            let leftEdgeHeight = tile.y - tile.h / 2;
+            if(box.colliding(tile)){
+                let leftEdge = tile.x - tile.w / 2;
+                let leftEdgeHeight = tile.y - tile.h / 2;
 
-            if (box.x <leftEdge && box.y > leftEdgeHeight) {
-                resetGame();
-                break;
+                if (box.x <leftEdge && box.y > leftEdgeHeight) {
+                    resetGame();
+                    break;
+                }
+            }
+        }
+
+        for (let orb of orbs) {
+            if (box.colliding(orb)) {
+                orb.visible = false;
+                orb.collider = "none";
+                box.vel.y = -10;
+                jumpChance = MAX_JUMP
             }
         }
     }
 
-    for (let orb of orbs) {
-        if (box.colliding(orb)) {
-            orb.visible = false;
-            orb.collider = "none";
-            box.vel.y = -10;
-            jumpChance = MAX_JUMP
-        }
-    }
 
 
 
-}
 
 
 
