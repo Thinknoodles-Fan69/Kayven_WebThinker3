@@ -10,6 +10,8 @@ let orbs;
 let sharp;
 let finishLine;
 let startCoordinates;
+let startSprite;
+let endSprite;
 
 function preload() {
     cube = loadImage("assets/cube.png");
