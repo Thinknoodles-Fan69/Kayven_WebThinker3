@@ -160,10 +160,3 @@ function resetGame() {
 
   
 }
-
-
-
-
-
-
-
