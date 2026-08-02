@@ -212,3 +212,8 @@ function triggerGameOver() {
 
 }
 
+
+function loadLevel() {
+    ground.removeAll
+}
+
