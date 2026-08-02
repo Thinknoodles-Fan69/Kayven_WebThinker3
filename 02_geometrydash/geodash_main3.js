@@ -124,17 +124,19 @@ function draw() {
         }
     }
 
-
-    if (!startGame && (mouse.presses() || kb.presses('space'))) {
-        startGame = true;
-        startSprite.visible = false;
-    } else if (!startGame) {
-        if (frameCount % 60 < 30) {
-            startSprite.visible = true;
-        } else {
+    if (startGame) {
+        if (!startGame && (mouse.presses() || kb.presses('space'))) {
+            startGame = true;
             startSprite.visible = false;
+        } else if (!startGame) {
+            if (frameCount % 60 < 30) {
+                startSprite.visible = true;
+            } else {
+                startSprite.visible = false;
+            }
         }
     }
+
 }
 
 
