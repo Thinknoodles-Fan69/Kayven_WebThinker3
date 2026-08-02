@@ -16,7 +16,7 @@ let startGameImg;
 let endGameImg;
 
 let startGame = false;
-
+let gameOver = false;
 
 function preload() {
     cube = loadImage("assets/cube.png");
