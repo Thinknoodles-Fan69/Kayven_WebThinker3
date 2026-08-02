@@ -20,7 +20,8 @@ function preload() {
     bg = loadImage("assets/geobg.png");
     tileMap1 = loadStrings("stages/tiles1.txt");
     spike = loadImage("assets/spike.png");
-    startGameImg = loadImage("assets/startgame.png";
+    startGameImg = loadImage("assets/startgame.png");
+    endGamweImg = loadImage("assets/endgame.png");
 }
 
 function setup() {
