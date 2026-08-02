@@ -91,7 +91,7 @@ function draw() {
         }
     }
     if (startGame) {
-            box.collider = "dynamic";
+        box.collider = "dynamic";
         box.vel.x = 8;
 
         if (box.x >= width/2) {
