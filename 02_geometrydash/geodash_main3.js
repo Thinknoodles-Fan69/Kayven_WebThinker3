@@ -79,6 +79,18 @@ function draw() {
     clear();
     image(bg, 0, 0, 800, 600);
 
+    if (!startGame && (mouse.presses() || kb.presses('space'))) {
+            startGame = true;
+            startSprite.visible = false;
+        } else if (!startGame) {
+            if (frameCount % 60 < 30) {
+                startSprite.visible = true;
+            } else {
+                startSprite.visible = false;
+            }
+        }
+    }
+    if (startGame) {
     box.collider = "dynamic";
     box.vel.x = 8;
 
@@ -124,18 +136,7 @@ function draw() {
         }
     }
 
-    if (startGame) {
-        if (!startGame && (mouse.presses() || kb.presses('space'))) {
-            startGame = true;
-            startSprite.visible = false;
-        } else if (!startGame) {
-            if (frameCount % 60 < 30) {
-                startSprite.visible = true;
-            } else {
-                startSprite.visible = false;
-            }
-        }
-    }
+
 
 }
 
