@@ -128,6 +128,10 @@ function draw() {
                     break;
                 }
             }
+
+            if (box.collides(finishLine)) {
+                triggerGameOver();
+            }
         }
 
         for (let orb of orbs) {
@@ -140,7 +144,7 @@ function draw() {
         }
     }
 
-    
+
 }
 
 
