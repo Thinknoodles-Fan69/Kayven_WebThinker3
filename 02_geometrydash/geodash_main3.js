@@ -129,9 +129,7 @@ function draw() {
                 }
             }
 
-            if (box.collides(finishLine)) {
-                triggerGameOver();
-            }
+            
         }
 
         for (let orb of orbs) {
@@ -142,8 +140,14 @@ function draw() {
                 jumpChance = MAX_JUMP
             }
         }
+
+        if (box.collides(finishLine)) {
+                triggerGameOver();
+            }
+
+        
     }
-    
+
 
 
 }
