@@ -167,6 +167,7 @@ function draw() {
         }
 
         if (box.collides(finishLine)) {
+                lost = false;
                 triggerGameOver();
             }
 
