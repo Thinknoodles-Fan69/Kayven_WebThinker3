@@ -174,7 +174,7 @@ function draw() {
                 if (endSprite) {
                     endSprite.remove();
                 }
-                staertGame = false;
+                startGame = false;
                 gameOver = false;
                 resetGame();
 
