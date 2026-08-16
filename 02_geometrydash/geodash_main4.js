@@ -38,7 +38,9 @@ function preload() {
     startGameImg = loadImage("assets/startgame.png");
     endGameImg = loadImage("assets/clear.png");
     tileMap2 = loadStrings("stages/tiles2.txt");
-    backgroundTrack = createAudio("assets/stereo-madness")
+    backgroundTrack = createAudio("assets/stereo-madness.mp3");
+    failSound = createAudio("assets/fail-sound.mp3");
+    passSound = createAudio("assets/pass-sound.mp3");
 }
 
 function setup() {
