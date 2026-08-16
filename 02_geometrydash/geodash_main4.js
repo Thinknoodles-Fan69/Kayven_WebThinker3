@@ -256,6 +256,8 @@ function triggerGameOver() {
         endSprite.img = endGameImg;
     }
 
+    backgroundTrack.stop();
+
 }
 
 
