@@ -21,6 +21,9 @@ let gameOver = false;
 let level = 1;
 let lastLevel = 2;
 
+
+let mapused;
+
 function preload() {
     cube = loadImage("assets/cube.png");
     bg = loadImage("assets/geobg.png");
