@@ -25,6 +25,10 @@ let particles;
 let mapused;
 
 let backgroundTrack;
+let failSound;
+let passSound;
+
+let lost = false;
 
 function preload() {
     cube = loadImage("assets/cube.png");
