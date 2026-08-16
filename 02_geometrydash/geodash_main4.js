@@ -221,7 +221,7 @@ function resetGame(){
         backgroundTrack.stop();
         failSound.play();
     }
-    
+
         box.rotation = 0;
         
         box.x = startCoordinates[0];
@@ -237,6 +237,7 @@ function resetGame(){
     
 
     particles.removeAll();
+    startGame = false;
 
   
 }
