@@ -24,6 +24,8 @@ let lastLevel = 2;
 let particles;
 let mapused;
 
+let
+
 function preload() {
     cube = loadImage("assets/cube.png");
     bg = loadImage("assets/geobg.png");
