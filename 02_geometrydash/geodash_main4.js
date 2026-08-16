@@ -87,10 +87,10 @@ function setup() {
     startSprite.img = startGameImg;
     startSprite.collider = "none";
 }
-
+ 
 function draw() {
     clear();
-    image(bg, 0, 0, 800, 600);
+    drawBackground();
 
     if (!startGame && (mouse.presses() || kb.presses('space'))) {
             startGame = true;
