@@ -170,7 +170,7 @@ function draw() {
         }
     }
 
-
+    drawBackground();
 
 }
 
