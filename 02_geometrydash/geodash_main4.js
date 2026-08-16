@@ -227,6 +227,7 @@ function resetGame() {
     }
 
     particles.removeAll();
+    
   
 }
 
