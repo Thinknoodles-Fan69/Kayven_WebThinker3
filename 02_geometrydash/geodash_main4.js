@@ -89,7 +89,7 @@ function setup() {
 
 
     particles = new Group();
-    
+
 }
  
 function draw() {
@@ -171,6 +171,18 @@ function draw() {
                 level += 1;
                 loadLevel();        
             }
+        }
+
+        if (framecount % 3 === 0 && box.colliding(ground) && box.vel.x >= 0.5) {
+            let particle = new Sprite(box.x, box.y + box.h / 2, 8, 8, "none");
+            particle.color = "white";
+            particle.strokeWeight = 0;
+            particle.vel.x = -5
+            particle.vel.y = random(-2, 0);
+            particle.life = 30;
+
+
+            particles.add(particle);
         }
     }
 
