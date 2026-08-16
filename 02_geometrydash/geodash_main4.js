@@ -78,8 +78,9 @@ function setup() {
     finishLine.visible = false;
     finishLine.collider = "static"; 
     
+    new Tiles(tileMap1, 0, 0, 50, 50);
     mapused = tileMap1;
-    new Tiles(mapused, 0, 0, 50, 50);
+    
 
     startSprite = new Sprite(width / 2, height / 2, 190, 90);
     startSprite.img = startGameImg;
