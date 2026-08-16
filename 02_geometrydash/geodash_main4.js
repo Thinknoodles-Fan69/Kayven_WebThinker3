@@ -193,6 +193,8 @@ function draw() {
 
             particles.add(particle);
         }
+
+        
     }
 
     drawBackground();
