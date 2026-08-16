@@ -24,7 +24,7 @@ let lastLevel = 2;
 let particles;
 let mapused;
 
-let
+let backgroundTrack;
 
 function preload() {
     cube = loadImage("assets/cube.png");
