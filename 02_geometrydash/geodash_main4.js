@@ -213,6 +213,11 @@ function draw() {
 
 
 function resetGame() {
+
+    if (lost) {
+        failSound.play();
+        lost = false;
+    }
     box.rotation = 0;
     
     box.x = startCoordinates[0];
@@ -227,7 +232,7 @@ function resetGame() {
     }
 
     particles.removeAll();
-    
+
   
 }
 
