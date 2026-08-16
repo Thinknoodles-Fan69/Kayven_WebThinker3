@@ -212,6 +212,7 @@ function resetGame() {
         orb.collider = "static";
     }
 
+    particles.removeAll();
   
 }
 
