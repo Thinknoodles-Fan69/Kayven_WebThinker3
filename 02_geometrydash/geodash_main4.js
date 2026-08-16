@@ -215,20 +215,18 @@ function draw() {
 function resetGame() {
 
     if (lost) {
-        failSound.play();
-        lost = false;
-    }
-    box.rotation = 0;
-    
-    box.x = startCoordinates[0];
-    box.y = startCoordinates[1];
+        box.rotation = 0;
+        
+        box.x = startCoordinates[0];
+        box.y = startCoordinates[1];
 
-    jumpChance = MAX_JUMP;
-    camera.x = width / 2
+        jumpChance = MAX_JUMP;
+        camera.x = width / 2
 
-    for (let orb of orbs) {
-        orb.visible = true;
-        orb.collider = "static";
+        for (let orb of orbs) {
+            orb.visible = true;
+            orb.collider = "static";
+        }
     }
 
     particles.removeAll();
