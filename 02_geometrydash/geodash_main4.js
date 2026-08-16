@@ -90,7 +90,7 @@ function setup() {
  
 function draw() {
     clear();
-    drawBackground();
+    image(bg, 0, 0, 800, 600);
 
     if (!startGame && (mouse.presses() || kb.presses('space'))) {
             startGame = true;
