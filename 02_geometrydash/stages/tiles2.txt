@@ -4,9 +4,9 @@
 
 
 
-                       g                                    ggggg                                ggggg
-                       g                                        g                                    g
-                       g                                    ggggg                                ggggg                                                                                        ggggg                                          
+                       g                                    ggggg                                ggggg                                  g
+                       g                                        g                                    g                                 gg  
+                       g                                    ggggg                                ggggg                                 gg                                                        ggggg                                          
                        g                                    g                                        g                                                                                  g                               
                        g                                    ggggg                                ggggg                                                                                         g                                  f
                                                  s                             ss                                        sss                            ssss                                      sssssss                                                             
