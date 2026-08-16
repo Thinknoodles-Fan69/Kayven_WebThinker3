@@ -215,7 +215,7 @@ function draw() {
 
 
 
-function c() {
+function resetGame(){
 
     if (lost) {
         box.rotation = 0;
