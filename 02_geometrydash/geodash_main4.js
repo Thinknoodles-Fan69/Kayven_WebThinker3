@@ -136,7 +136,7 @@ function draw() {
             jumpChance = MAX_JUMP;
         }
 
-            if (box.collides(sharp)) {
+        if (box.collides(sharp)) {
             lost = true;
             resetGame()
         }
@@ -245,7 +245,7 @@ function resetGame(){
 function triggerGameOver() {
 
     backgroundTrack.stop();
-    
+
     if(!gameOver) {
         gameOver = true;
         passSound.play();
