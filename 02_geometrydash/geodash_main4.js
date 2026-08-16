@@ -39,8 +39,8 @@ function preload() {
     endGameImg = loadImage("assets/clear.png");
     tileMap2 = loadStrings("stages/tiles2.txt");
     backgroundTrack = createAudio("assets/stereo-madness.mp3");
-    failSound = createAudio("assets/fail-sound.mp3");
-    passSound = createAudio("assets/pass-sound.mp3");
+    failSound = createAudio("assets/geometry-dash-death-sound.mp3");
+    passSound = createAudio("assets/game-start.mp3");
 }
 
 function setup() {
