@@ -137,6 +137,7 @@ function draw() {
         }
 
             if (box.collides(sharp)) {
+            lost = true;
             resetGame()
         }
 
