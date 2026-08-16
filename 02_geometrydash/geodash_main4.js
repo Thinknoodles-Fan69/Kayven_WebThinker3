@@ -231,6 +231,7 @@ function resetGame() {
             orb.collider = "static";
         }
         backgroundTrack.stop();
+        failSound.play();
     }
 
     particles.removeAll();
