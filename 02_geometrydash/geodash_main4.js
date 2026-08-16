@@ -243,6 +243,9 @@ function resetGame(){
 }
 
 function triggerGameOver() {
+
+    backgroundTrack.stop();
+    
     if(!gameOver) {
         gameOver = true;
         passSound.play();
@@ -260,7 +263,7 @@ function triggerGameOver() {
         endSprite.img = endGameImg;
     }
 
-    backgroundTrack.stop();
+    
 
 }
 
