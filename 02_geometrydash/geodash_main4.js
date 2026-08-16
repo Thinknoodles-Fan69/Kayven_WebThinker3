@@ -21,7 +21,7 @@ let gameOver = false;
 let level = 1;
 let lastLevel = 2;
 
-
+let particles;
 let mapused;
 
 function preload() {
