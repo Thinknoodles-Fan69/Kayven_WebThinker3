@@ -246,7 +246,7 @@ function drawBackground() {
   let progress = map(box.x, 0, totalJourney, -100, 0);
 
   let c1 = color("#fb00af"); //colours for lerping
-  let c2 = color("#4169e1");
+  let c2 = color("#15ff00");
 
   let amt = (sin(frameCount * 0.5) + 1) / 2; //Create a value that repeatedly changes between 0 and 1.
   let blend = lerpColor(c1, c2, amt); //lerp between two colours
