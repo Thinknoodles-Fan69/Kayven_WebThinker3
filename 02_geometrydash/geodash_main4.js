@@ -233,6 +233,7 @@ function resetGame() {
 function triggerGameOver() {
     if(!gameOver) {
         gameOver = true;
+        passSound.play();
 
         box.vel.x = 0;
         jumpChance = 0;
