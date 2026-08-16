@@ -6,8 +6,8 @@
 
                        g                                    ggggg                                ggggg                                  g                             ggggg
                        g                                        g                                    g                                 gg                                 g
-                       g                                    ggggg                                ggggg                                g g                                 g                            ggggg                                          
-                       g                                    g                                        g                               gggggg                        g                            g                               
-                       g                                    ggggg                                ggggg                                  g                                                          g                                  f
+                       g                                    ggggg                                ggggg                                g g                                 g                                                                   
+                       g                                    g                                        g                               gggggg                               g                                                         
+                       g                                    ggggg                                ggggg                                  g                                 g                                                                  f
                                                  s                             ss                                        sss                            ssss                                      sssssss                                                             
 gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg
