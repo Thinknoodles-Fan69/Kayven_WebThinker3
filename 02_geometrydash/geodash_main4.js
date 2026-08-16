@@ -230,6 +230,7 @@ function resetGame() {
             orb.visible = true;
             orb.collider = "static";
         }
+        backgroundTrack.stop();
     }
 
     particles.removeAll();
