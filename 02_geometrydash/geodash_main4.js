@@ -88,6 +88,7 @@ function setup() {
     startSprite.collider = "none";
 
 
+    particles = new Group();
     
 }
  
