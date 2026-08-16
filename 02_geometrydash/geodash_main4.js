@@ -218,6 +218,10 @@ function draw() {
 function resetGame(){
 
     if (lost) {
+        backgroundTrack.stop();
+        failSound.play();
+    }
+    
         box.rotation = 0;
         
         box.x = startCoordinates[0];
@@ -230,9 +234,7 @@ function resetGame(){
             orb.visible = true;
             orb.collider = "static";
         }
-        backgroundTrack.stop();
-        failSound.play();
-    }
+    
 
     particles.removeAll();
 
