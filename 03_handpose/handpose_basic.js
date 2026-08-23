@@ -3,6 +3,7 @@ let videoW = 640;
 let videoH = 480;
 let hands = [];
 let fingerTip;
+let balloon;
 
 function preload() {
     let options = {
