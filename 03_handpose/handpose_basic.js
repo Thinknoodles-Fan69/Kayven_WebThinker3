@@ -37,7 +37,7 @@ function setup() {
 }
 
 function draw() {
-    image(video, 0, 0)
+    image(video, 0, 0, videoW, videoH);
 }
 
 
