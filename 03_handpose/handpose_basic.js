@@ -1,7 +1,8 @@
 let handPose;
 let videoW = 640;
 let videoH = 480;
-let hands = []
+let hands = [];
+let fingerTip;
 
 function preload() {
     let options = {
