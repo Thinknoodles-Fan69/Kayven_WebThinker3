@@ -48,6 +48,10 @@ function draw() {
             circle(keypoint.x, keypoint.y, 10);
         }
     }
+
+    if (hands.length > 0){
+        
+    }
 }
 
 
