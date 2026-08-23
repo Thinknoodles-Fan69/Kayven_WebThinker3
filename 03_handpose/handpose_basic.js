@@ -32,7 +32,7 @@ function setup() {
     video.size(640, 480);
     video.hide();
 
-    handpose.detectStart(vudei, gotHands)
+    handpose.detectStart(video, gotHands)
 }
 
 function draw() {}
