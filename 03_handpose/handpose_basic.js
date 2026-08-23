@@ -45,7 +45,9 @@ function setup() {
     fingerTip.color = "rgba(218, 41, 28, 0.05)"
 
     balloon = new Sprite();
-    balloon.diameter = 6}
+    balloon.diameter =60;
+    
+}
 
 function draw() {
     image(video, 0, 0, videoW, videoH);
