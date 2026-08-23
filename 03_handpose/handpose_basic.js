@@ -19,7 +19,7 @@ function setup() {
     let constraints = {
         video: {
             mandatory: {
-                
+                minWidth ; video
             }
         }
     }
