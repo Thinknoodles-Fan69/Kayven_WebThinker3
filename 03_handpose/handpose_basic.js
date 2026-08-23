@@ -38,7 +38,8 @@ function setup() {
 
     fingerTip = newSprite();
     fingerTip.diameter = 60;
-    fingerTip.colliderr = ""
+    fingerTip.colliderr = "kinetic";
+    fingerTip.color = "rgba()"
 }
 
 function draw() {
