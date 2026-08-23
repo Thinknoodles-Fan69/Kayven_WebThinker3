@@ -6,9 +6,10 @@ function preload() {
         runtime: "tfjs",
         modelType: "full",
         detectorModelUrl: undefined,
-        landmarkModelUrl:
+        landmarkModelUrl: undefined,
 
     }
+    
 }
 
 function setup() {}
