@@ -1,5 +1,6 @@
 let handPose;
-let videoW = 
+let videoW = 640;
+let videoH = 480;
 
 function preload() {
     let options = {
@@ -13,7 +14,9 @@ function preload() {
     handPose = m15.handPose(options)
 }
 
-function setup() {}
+function setup() {
+    
+}
 
 function draw() {}
 
