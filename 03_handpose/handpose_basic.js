@@ -1,4 +1,5 @@
 let handPose;
+let videoW = 
 
 function preload() {
     let options = {
