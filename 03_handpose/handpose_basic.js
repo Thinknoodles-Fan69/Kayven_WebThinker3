@@ -29,7 +29,9 @@ function setup() {
     };
 
     video = createCapture(constraints);
-
+    video.size(640, 480);
+    video.hide();
+    
 }
 
 function draw() {}
