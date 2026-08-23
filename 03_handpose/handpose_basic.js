@@ -36,7 +36,9 @@ function setup() {
     handpose.detectStart(video, gotHands)
 }
 
-function draw() {}
+function draw() {
+    
+}
 
 
 
