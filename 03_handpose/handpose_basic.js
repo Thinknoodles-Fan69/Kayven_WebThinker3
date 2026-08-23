@@ -36,10 +36,10 @@ function setup() {
 
     handPose.detectStart(video, gotHands)
 
-    fingerTip = newSprite();
+    fingerTip = new Sprite();
     fingerTip.diameter = 60;
     fingerTip.colliderr = "kinetic";
-    fingerTip.color = "rgba()"
+    fingerTip.color = "rgba(67, 67, 67, 67)"
 }
 
 function draw() {
