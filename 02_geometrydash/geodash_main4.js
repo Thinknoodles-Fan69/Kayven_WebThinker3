@@ -197,8 +197,9 @@ function draw() {
             particles.add(particle);
         }
 
-        if (backgroundTrack.elt.paused) {
-            backgroundTrack.play();
+        if (backgroundTrack.isPlaying() === false) {
+            backgroundTrack.play()
+            
         }
 
     }
