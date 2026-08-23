@@ -56,7 +56,10 @@ function draw() {
         circle(keypoint.x, keypoint.y, 30)
     }
 
-    if (hands.length > 0)
+    if (hands.length > 0) {
+        let hand = hands[0];
+        let 
+    }
 }
 
 
