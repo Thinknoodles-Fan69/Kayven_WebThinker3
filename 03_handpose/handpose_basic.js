@@ -9,7 +9,7 @@ function preload() {
         landmarkModelUrl: undefined,
 
     }
-    
+    handPose = m15.handPose(options)
 }
 
 function setup() {}
