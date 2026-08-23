@@ -48,7 +48,10 @@ function setup() {
     balloon.diameter = 60;
     balloon.collider = "dynamic";
     balloon.color = "black";
-    
+    balloon.x = width/2;
+    balloon.y = 100;
+    balloon.bounciness = 1;
+    b
 }
 
 function draw() {
