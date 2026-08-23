@@ -27,6 +27,8 @@ function setup() {
         audio: false,
         flipped: true,
     };
+
+    
 }
 
 function draw() {}
