@@ -37,7 +37,8 @@ function setup() {
     handPose.detectStart(video, gotHands)
 
     fingerTip = newSprite();
-    
+    fingerTip.diameter = 60;
+    fingerTip.colliderr = ""
 }
 
 function draw() {
