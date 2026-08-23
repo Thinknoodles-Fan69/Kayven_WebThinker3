@@ -37,6 +37,8 @@ function setup() {
 
 function draw() {}
 
-//=========================================
-// Function Created
-//=========================================
+
+
+function gotHands(results) {
+
+}
