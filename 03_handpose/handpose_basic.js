@@ -55,6 +55,8 @@ function draw() {
 
         circle(keypoint.x, keypoint.y, 30)
     }
+
+    if (hands.length > 0)
 }
 
 
