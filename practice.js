@@ -31,7 +31,8 @@ function draw() {
     }
 
     box.vel.x = 1;
-    
+
+    camera 
             
 
 
