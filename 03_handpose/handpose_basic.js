@@ -4,6 +4,7 @@ let videoH = 480;
 let hands = [];
 let fingerTip;
 let balloon;
+let bottomWall
 
 function preload() {
     let options = {
