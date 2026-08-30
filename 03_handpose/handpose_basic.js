@@ -100,7 +100,9 @@ function draw() {
         textAlign(CENTER, CENTER);
         fill('limegreen');
         textSize(20);
-        text("Finger Index B")
+        text("Finger Index Bounce Use The To Ball");
+        textSize(28);
+        tex
 
     }
 
