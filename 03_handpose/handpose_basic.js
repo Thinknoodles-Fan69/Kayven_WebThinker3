@@ -60,10 +60,10 @@ function setup() {
     leftWall = new Sprite(0, height/2, 10, height, "static")
     rightWall = new Sprite(width, height/2, 10, height, "static")
 
-    boundaryGroup = new GPUBindGroup();
-
+    boundaryGroup = new Group();
     boundaryGroup.add(topWall)
-    
+    boundaryGroup.add(bottomWall)
+    boundaryGroup.add
 }
 
 function draw() {
