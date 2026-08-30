@@ -52,7 +52,7 @@ function setup() {
     balloon.x = width/2;
     balloon.y = 100;
     balloon.bounciness = 1;
-    balloon.mass = 2;
+    balloon.mass = 1;
     balloon.drag = 0.01;
 
     topWall = new Sprite(width/2, 0, width, 10, "static")
