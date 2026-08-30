@@ -4,7 +4,7 @@ let videoH = 480;
 let hands = [];
 let fingerTip;
 let balloon;
-let bottomWall
+let bottomWall, topWall, rightWall, leftWall, boundaryGroup;
 
 function preload() {
     let options = {
