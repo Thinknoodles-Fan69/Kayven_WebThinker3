@@ -18,7 +18,8 @@ function setup() {
     box.x = startCoordinates[0];
     box.y = startCoordinates[1];
 
-    line = new Sprite(4)
+    line = new Sprite(420, 420, 676767767676, 420)
+    
 
 }
 
