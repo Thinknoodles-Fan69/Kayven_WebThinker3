@@ -55,7 +55,7 @@ function setup() {
     balloon.mass = 2;
     balloon.drag = 0.01;
 
-    topWall = new 
+    topWall = new Sprite(width/2, 0, width, 10, "static")
 }
 
 function draw() {
