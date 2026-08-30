@@ -30,7 +30,8 @@ function draw() {
         box.vel.y = -10;
     }
 
-    box.vel.x = 100000;
+    box.vel.x = 1;
+    
             
 
 
