@@ -14,7 +14,7 @@ function setup() {
     box.bounciness = 1;
     box.color = "red";
 
-    startCoordinates = [400, height - box.height / 2];
+    startCoordinates = [350, 300];
     box.x = startCoordinates[0];
     box.y = startCoordinates[1];
 
