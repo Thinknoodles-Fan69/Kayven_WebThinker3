@@ -13,7 +13,7 @@ function setup() {
     box.collider = "dynamic";
     box.color = "red";
             
-    startCoordinates = [350, 300];
+    startCoordinates = [350, 180];
     box.x = startCoordinates[0];
     box.y = startCoordinates[1];
 
