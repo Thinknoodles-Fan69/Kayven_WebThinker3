@@ -29,7 +29,7 @@ function draw() {
     box.vel.x = 1;
 
     camera.x = box.x
-    // camera.y = box.y
+    camera.y = box.y
             
 
 
