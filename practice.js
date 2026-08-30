@@ -14,7 +14,7 @@ function setup() {
     box.color = "red";
             
 
-    line = new Sprite(420, 420, 67676767676767, 420)
+    line = new Sprite(420, 420, 10000, 420)
     line.collider = "static";
     line.color = "black";
 
