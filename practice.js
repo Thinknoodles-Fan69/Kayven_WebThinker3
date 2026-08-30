@@ -9,11 +9,11 @@ function setup() {
     new Canvas(700, 600);
     world.gravity.y = 32;
 
-    box = new Sprite(50, height, 50, 50);
+    box = new Sprite(100, 300, 50, 50);
     box.collider = "dynamic";
     box.color = "red";
             
-    startCoordinates = [100, 300];
+    startCoordinates = [, ];
     box.x = startCoordinates[0];
     box.y = startCoordinates[1];
 
