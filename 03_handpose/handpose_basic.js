@@ -5,6 +5,8 @@ let hands = [];
 let fingerTip;
 let balloon;
 let bottomWall, topWall, rightWall, leftWall, boundaryGroup;
+let gameStarted = false;
+let gameOver'
 
 function preload() {
     let options = {
