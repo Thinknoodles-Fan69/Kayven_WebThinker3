@@ -82,17 +82,17 @@ function draw() {
     //         circle(keypoint.x, keypoint.y, 10);
     //     }
     // }
+    if (gameOver === false) 
+        if (hands.length > 0){
+            let hand = hands[0];
+            let keypoint = hand.keypoints[8];
 
-    // if (hands.length > 0){
-    //     let hand = hands[0];
-    //     let keypoint = hand.keypoints[8];
-
-    //     fingerTip.x = keypoint.x;
-    //     fingerTip.y = keypoint.y;
-    //     fingerTip.visible = true;
-    // }else{
-    //     fingerTip.visible = false;
-    // }
+            fingerTip.x = keypoint.x;
+            fingerTip.y = keypoint.y;
+            fingerTip.visible = true;
+        }else{
+            fingerTip.visible = false;
+        }
 
 
  
