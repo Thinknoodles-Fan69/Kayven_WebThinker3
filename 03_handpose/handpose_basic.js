@@ -63,7 +63,8 @@ function setup() {
     boundaryGroup = new Group();
     boundaryGroup.add(topWall)
     boundaryGroup.add(bottomWall)
-    boundaryGroup.add
+    boundaryGroup.add(leftWall)
+    boundaryGroup.add(rightWall)
 }
 
 function draw() {
