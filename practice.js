@@ -30,10 +30,10 @@ function draw() {
         box.vel.y = -10;
     }
 
-    box.vel.x = 1;
+    box.vel.x = 1000;
 
     camera.x = box.x
-    camera.y = box.y
+    // camera.y = box.y
             
 
 
