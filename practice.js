@@ -20,7 +20,7 @@ function setup() {
 
     line = new Sprite(420, 420, 676767767676, 420)
     line.collider = "static";
-    line.color = "black"
+    line.color = "black";
 
 }
 
