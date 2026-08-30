@@ -12,12 +12,12 @@ function setup() {
 }
 
 function draw() {
-    
 
 
 
 
 
 
-    drawBackground();
+
+   
 }
