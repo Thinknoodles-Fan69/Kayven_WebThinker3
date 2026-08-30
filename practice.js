@@ -17,7 +17,8 @@ function setup() {
 
 function draw() {
     clear();
-    Image(bg, 800, 700)
+    image(bg, 800, 700)
 
     drawBackground();
-}
+}clear();
+    image(bg, 0, 0, 800, 600);
