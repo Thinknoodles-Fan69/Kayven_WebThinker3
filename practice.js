@@ -1,5 +1,5 @@
 let box;
-let safetyNetToCatchTheBoxSoItDoesNotFallOffTheC
+let safetyNetToCatchTheBoxSoItDoesNotFallOffTheCanvasAndWeCanKeepPlayingIt;
 
 function preload() {
 
