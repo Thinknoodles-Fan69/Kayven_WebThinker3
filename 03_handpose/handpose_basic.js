@@ -62,7 +62,8 @@ function setup() {
 
     boundaryGroup = new GPUBindGroup();
 
-    boundaryGroup.add
+    boundaryGroup.add(topWall)
+    
 }
 
 function draw() {
