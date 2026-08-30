@@ -93,7 +93,11 @@ function draw() {
         }else{
             fingerTip.visible = false;
         }
-    }2
+    }
+
+    if (gameStarted === false) {
+        textSize
+    }
 
  
 
