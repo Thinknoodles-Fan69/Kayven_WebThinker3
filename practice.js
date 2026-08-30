@@ -13,9 +13,9 @@ function setup() {
     box.collider = "dynamic";
     box.color = "red";
 
-    // line = new Sprite(420, 420, 67676767676767676767676767, 420)
-    // line.collider = "static";
-    // line.color = "black";
+    line = new Sprite(420, 420, 67676767676767676767676767, 420)
+    line.collider = "static";
+    line.color = "black";
 
 }
 
