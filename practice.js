@@ -10,7 +10,9 @@ function setup() {
 
     box = new Sprite(50, height, 50, 50);
     box.collider = "dynamic";
-    box.
+    box.bounciness = 1;
+    box.color = "black";
+    
 }
 
 function draw() {
