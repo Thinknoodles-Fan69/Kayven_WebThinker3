@@ -13,6 +13,10 @@ function setup() {
     box.bounciness = 1;
     box.color = "red";
 
+    startCoordinates = [50, height - box.height / 2];
+    box.x = startCoordinates[0];
+    box.y = startCoordinates[1];
+
 }
 
 function draw() {
