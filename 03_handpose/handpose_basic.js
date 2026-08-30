@@ -82,7 +82,7 @@ function draw() {
     //         circle(keypoint.x, keypoint.y, 10);
     //     }
     // }
-    if (gameOver === false) 
+    if (gameOver === false) {
         if (hands.length > 0){
             let hand = hands[0];
             let keypoint = hand.keypoints[8];
@@ -93,7 +93,7 @@ function draw() {
         }else{
             fingerTip.visible = false;
         }
-
+    }
 
  
 
