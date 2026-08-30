@@ -12,5 +12,13 @@ function setup() {
 }
 
 function draw() {
-    backgr
+    clear();
+    image(bg, 0, 0, 800, 600);
+
+
+
+
+
+
+    drawba
 }
