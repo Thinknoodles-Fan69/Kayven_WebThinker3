@@ -13,11 +13,11 @@ function setup() {
     box.collider = "dynamic";
     box.color = "red";
             
-    startCoordinates = [350, 180];
+    startCoordinates = [350, 300];
     box.x = startCoordinates[0];
     box.y = startCoordinates[1];
 
-    line = new Sprite(420, 420, 67676767676767676767676767, 420)
+    line = new Sprite(420, 420, 1000, 420)
     line.collider = "static";
     line.color = "black";
 
@@ -33,7 +33,7 @@ function draw() {
     box.vel.x = 1;
 
     camera.x = box.x
-    // camera.y = box.y
+    camera.y = box
             
 
 
