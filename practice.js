@@ -12,10 +12,6 @@ function setup() {
     box = new Sprite(100, 300, 50, 50);
     box.collider = "dynamic";
     box.color = "red";
-            
-    startCoordinates = [, ];
-    box.x = startCoordinates[0];
-    box.y = startCoordinates[1];
 
     line = new Sprite(420, 420, 67676767676767676767676767, 420)
     line.collider = "static";
