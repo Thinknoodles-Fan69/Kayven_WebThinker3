@@ -20,5 +20,5 @@ function draw() {
 
 
 
-    drawbackgro
+    drawBackground();
 }
