@@ -9,13 +9,13 @@ function setup() {
     new Canvas(700, 600);
     world.gravity.y = 32;
 
-    box = new Sprite(100, 300, 50, 50);
+    box = new Sprite(50, 300, 50, 50);
     box.collider = "dynamic";
     box.color = "red";
 
-    line = new Sprite(420, 420, 67676767676767676767676767, 420)
-    line.collider = "static";
-    line.color = "black";
+    // line = new Sprite(420, 420, 67676767676767676767676767, 420)
+    // line.collider = "static";
+    // line.color = "black";
 
 }
 
