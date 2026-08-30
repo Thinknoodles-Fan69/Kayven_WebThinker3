@@ -18,5 +18,5 @@ function setup() {
 function draw() {
     clear();
 
-    background(blue);
+    background("blue");
 }
