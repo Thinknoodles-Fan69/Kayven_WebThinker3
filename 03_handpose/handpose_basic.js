@@ -6,7 +6,7 @@ let fingerTip;
 let balloon;
 let bottomWall, topWall, rightWall, leftWall, boundaryGroup;
 let gameStarted = false;
-let gameOver'
+let gameOver = false;
 
 function preload() {
     let options = {
