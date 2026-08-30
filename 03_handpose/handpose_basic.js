@@ -54,6 +54,8 @@ function setup() {
     balloon.bounciness = 1;
     balloon.mass = 2;
     balloon.drag = 0.01;
+
+    topWall = new 
 }
 
 function draw() {
