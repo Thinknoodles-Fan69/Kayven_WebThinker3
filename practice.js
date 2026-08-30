@@ -1,5 +1,5 @@
 let box;
-let safetyNetToCatchTheBoxSoItDoesNotFallOffTheCanvasAndWeCanKeepPlayingIt;
+let line;
 
 function preload() {
 
@@ -18,7 +18,7 @@ function setup() {
     box.x = startCoordinates[0];
     box.y = startCoordinates[1];
 
-    safetyNetToCatchTheBoxSoItDoesNotFallOffTheCanvasAndWeCanKeepPlayingIt = new Sprite()
+    line = new Sprite()
 
 }
 
