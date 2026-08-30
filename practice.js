@@ -26,10 +26,10 @@ function setup() {
 function draw() {
     clear();
     
-     if (kb.presses('space') || mouse.presses()) {
-
-     }
-            box.vel.y = -10;
+    if (kb.presses('space') || mouse.presses()) {
+        box.vel.y = -10;
+    }
+            
 
 
 
