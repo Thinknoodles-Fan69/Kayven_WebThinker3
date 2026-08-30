@@ -18,6 +18,8 @@ function setup() {
     box.x = startCoordinates[0];
     box.y = startCoordinates[1];
 
+    safetyNetToCatchTheBoxSoItDoesNotFallOffTheCanvasAndWeCanKeepPlayingIt
+
 }
 
 function draw() {
