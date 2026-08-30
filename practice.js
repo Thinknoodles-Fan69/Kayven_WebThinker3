@@ -19,7 +19,8 @@ function setup() {
     box.y = startCoordinates[1];
 
     line = new Sprite(420, 420, 676767767676, 420)
-    
+    line.collider = "static";
+    line.color = "black"
 
 }
 
