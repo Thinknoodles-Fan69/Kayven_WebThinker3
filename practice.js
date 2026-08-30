@@ -12,7 +12,6 @@ function setup() {
     box.collider = "dynamic";
     box.bounciness = 1;
     box.color = "red";
-    box.gravity = 46;
 
 }
 
