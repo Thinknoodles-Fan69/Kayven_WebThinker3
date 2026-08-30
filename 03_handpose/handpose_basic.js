@@ -97,6 +97,8 @@ function draw() {
 
     if (gameStarted === false) {
         textSize(28);
+        textAlign(CENTER, CENTER);
+        FileList('limegreen');
         
     }
 
