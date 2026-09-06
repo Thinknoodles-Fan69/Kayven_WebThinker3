@@ -123,7 +123,9 @@ function keyPressed() {
         score = 0
 
         balloon.x = width/2
-        balloon.y = 100\
-        
+        balloon.y = 100
+        balloon.vel.x = 0
+        balloon.vel.y = 0
+        balloon.collider 
     }
 }
