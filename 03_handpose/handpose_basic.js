@@ -102,7 +102,7 @@ function draw() {
         textSize(20);
         text("Finger Index Bounce Use The To Ball", width/2, height/2 -40);
         textSize(28);
-        text("Space Start To Game The Press")
+        text("Space Start To Game The Press", width/2, height/2)
 
     }
 
