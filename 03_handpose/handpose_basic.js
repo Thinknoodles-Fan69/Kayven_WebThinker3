@@ -116,6 +116,7 @@ function gotHands(results) {
     hands = results;
 }
 
+
 function keyPressed() {
     if (key === '') {
         gameStarted = true;
@@ -128,6 +129,7 @@ function keyPressed() {
         balloon.vel.y = 0;
         balloon.collider = "dynamic";
         balloon.bounciness = 1;
-        balloon.mass = 2
+        balloon.mass = 2;
+        balloon.drag = 0.01;
     }
 }
