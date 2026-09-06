@@ -121,5 +121,9 @@ function keyPressed() {
         gameStarted = true;
         gameOver = false;
         score = 0
+
+        balloon.x = width/2
+        balloon.y = 100\
+        
     }
 }
