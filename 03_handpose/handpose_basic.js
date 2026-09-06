@@ -49,13 +49,13 @@ function setup() {
 
     balloon = new Sprite();
     balloon.diameter = 60;
-    balloon.collider = "dynamic";
+    // balloon.collider = "dynamic";
     balloon.color = "black";
     balloon.x = width/2;
     balloon.y = 100;
-    balloon.bounciness = 1;
-    balloon.mass = 1;
-    balloon.drag = 0.01;
+    // balloon.bounciness = 1;
+    // balloon.mass = 1;
+    // balloon.drag = 0.01;
 
     topWall = new Sprite(width/2, 0, width, 10, "static")
     bottomWall = new Sprite(width/2, height, width, 10, "static")
