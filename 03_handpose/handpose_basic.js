@@ -8,6 +8,8 @@ let bottomWall, topWall, rightWall, leftWall, boundaryGroup;
 let gameStarted = false;
 let gameOver = false;
 let bounceSound;
+let score = 0;
+
 
 function preload() {
     let options = {
