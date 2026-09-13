@@ -132,7 +132,9 @@ function draw() {
     textAlign(LEFT, TOP);
     text("Score: " + score, 10, 10)
 
-    
+    if (balloon.collides(bottomWall)) {
+
+    }
 
   
 
