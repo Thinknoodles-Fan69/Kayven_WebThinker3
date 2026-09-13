@@ -19,7 +19,7 @@ function preload() {
 
     }
     handPose = ml5.handPose(options)
-    bounceSound = createAudio("assets/Low")
+    bounceSound = createAudio("assets/LowBoing.mp3")
 }
 
 
