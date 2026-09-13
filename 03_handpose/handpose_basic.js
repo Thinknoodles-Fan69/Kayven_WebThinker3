@@ -115,6 +115,9 @@ function draw() {
         score++;
     }
 
+    fill(0);
+    
+
  
 
 }
