@@ -142,7 +142,7 @@ function draw() {
 
     if (gameOver === true) {
         textSize(36);
-        textAlign(CENTER. CENTER);
+        textAlign(CENTER, CENTER);
         fill("magenta");
         text("GAME OVER", width/2, height/2);
         textSize(18);
