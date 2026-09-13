@@ -11,6 +11,7 @@ let bounceSound;
 let score = 0;
 let bounceCooldown = 0;
 let bounceDelay = 200;
+let gameOverSound;
 
 
 function preload() {
@@ -24,6 +25,7 @@ function preload() {
     }
     handPose = ml5.handPose(options)
     bounceSound = createAudio("assets/LowBoing.mp3")
+    
 }
 
 
