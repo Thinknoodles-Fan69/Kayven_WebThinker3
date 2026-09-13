@@ -117,7 +117,8 @@ function draw() {
 
     fill(0);
     textSize(24);
-    textAlign(leftWall, TOP)
+    textAlign(lEFT, TOP);
+    
 
  
 
