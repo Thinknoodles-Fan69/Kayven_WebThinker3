@@ -116,6 +116,7 @@ function draw() {
     }
 
     fill(0);
+    textSize(24);
     
 
  
