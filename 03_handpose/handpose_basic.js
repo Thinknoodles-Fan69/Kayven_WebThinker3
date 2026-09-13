@@ -141,7 +141,8 @@ function draw() {
     }
 
     if (gameOver === true) {
-        text
+        textSize(36);
+        
     }
 
   
