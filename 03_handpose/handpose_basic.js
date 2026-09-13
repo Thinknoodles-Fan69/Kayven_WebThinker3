@@ -7,6 +7,7 @@ let balloon;
 let bottomWall, topWall, rightWall, leftWall, boundaryGroup;
 let gameStarted = false;
 let gameOver = false;
+let bounceSound;
 
 function preload() {
     let options = {
