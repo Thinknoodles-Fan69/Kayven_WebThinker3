@@ -9,6 +9,8 @@ let gameStarted = false;
 let gameOver = false;
 let bounceSound;
 let score = 0;
+let bounceCooldown = 8;
+let bounceDela
 
 
 function preload() {
