@@ -135,7 +135,9 @@ function draw() {
     if (balloon.collides(bottomWall)) {
         gameOver = true;
         gameOverSound.play();
-        
+        balloon.vel.x = 0;
+        balloon.vel.y = 0;
+        balloon.collider = "none";
     }
 
   
