@@ -123,7 +123,7 @@ function draw() {
     text("Score: " + score, 10, 10)
 
     if (bounceCooldown > 0) {
-        
+        bounceCoold
     }
 
 }
