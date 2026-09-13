@@ -146,7 +146,7 @@ function draw() {
         fill("magenta");
         text("GAME OVER", width/2, height/2);
         textSize(18);
-        text("")
+        text("RESTART PRESS TO SPACE")
     }
 
   
