@@ -144,7 +144,9 @@ function draw() {
         textSize(36);
         textAlign(CENTER. CENTER);
         fill("magenta");
-        text("GAME OVER", width/2, height/2)
+        text("GAME OVER", width/2, height/2);
+        textSize(18);
+        
     }
 
   
