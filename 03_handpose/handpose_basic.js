@@ -9,7 +9,7 @@ let gameStarted = false;
 let gameOver = false;
 let bounceSound;
 let score = 0;
-let bounceCooldown = 0 ;
+let bounceCooldown = 0;
 let bounceDelay = 200;
 
 
@@ -122,7 +122,9 @@ function draw() {
     textAlign(LEFT, TOP);
     text("Score: " + score, 10, 10)
 
- 
+    if (bounceCooldown > 0) {
+        
+    }
 
 }
 
