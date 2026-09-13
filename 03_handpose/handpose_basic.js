@@ -140,6 +140,10 @@ function draw() {
         balloon.collider = "none";
     }
 
+    if (gameOver === true) {
+        text
+    }
+
   
 
 }
