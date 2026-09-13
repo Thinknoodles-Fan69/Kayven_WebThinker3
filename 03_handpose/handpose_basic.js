@@ -127,7 +127,8 @@ function draw() {
     }
 
     if (bounceCooldown <= 0 && balloon.collider(fingerTip)) {
-        
+
+        bounceCooldown = bounceDelay
     }
 
 }
