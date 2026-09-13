@@ -123,7 +123,11 @@ function draw() {
     text("Score: " + score, 10, 10)
 
     if (bounceCooldown > 0) {
-        bounceCooldown = Bounce
+        bounceCooldown = BounceCooldown - deltaTime;
+    }
+
+    if (bounceCooldown <= 0 && balloon.collider(fingerTip)) {
+        
     }
 
 }
