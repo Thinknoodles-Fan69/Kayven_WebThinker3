@@ -110,7 +110,7 @@ function draw() {
 
     }
 
-    if (balloon.colliders(fingerTip)) {
+    if (balloon.collides(fingerTip)) {
         bounceSound.play();
         score++;
     }
