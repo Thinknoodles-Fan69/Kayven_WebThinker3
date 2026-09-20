@@ -28,7 +28,7 @@ let rightPanelX = sidePanelWidth + cameraWidth;
 // ====================================================
 
 function preload(){
-    
+    bodyPose = m15.bodyPose("MoveNet", { flipped: true});
 }
 
 // ====================================================
@@ -44,10 +44,18 @@ function setup() {
     let constraints = {
         video : {
             width: cameraWidth,
-            height: cameraHeight
-            
-        }
-    }
+            height: cameraHeight,
+            aspectRatio: cameraWidth/ cameraHeight
+        },
+        audio: false,
+        flipped: true
+    };
+
+    video = createCapture(constraints);
+    video.hide();
+
+    bodyPose.detectStart(video,gotPoses);
+
 }
 
 
@@ -63,6 +71,10 @@ function draw() {
     drawUIPanel();
     // Draw the middle line that separates Player 1 and Player 2 areas.
     drawMiddleLine();
+
+    Image(video, cameraX, 0, cameraWidth, cameraHeight);
+
+    drawDetectionStatus()
 
 }
 
@@ -112,4 +124,16 @@ function drawMiddleLine() {
 
     // Draw the middle line inside the webcam area.
     line(width / 2, 0, width / 2, cameraHeight);
+}
+
+function gotPoses(results) {
+    detectedPeople = results;
+}
+
+function drawDetectionStatus() {
+    fill(0);
+    textSize(24);
+    text("People detected: " + detectedPeople.length, width/2 , 55);
+
+    console.log(detectedPeople);
 }
