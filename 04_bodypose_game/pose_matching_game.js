@@ -77,6 +77,10 @@ function draw() {
 
     drawDetectionStatus()
 
+    if(detectedPeople.length > 0) {
+        
+    }
+
 }
 
 // ====================================================
