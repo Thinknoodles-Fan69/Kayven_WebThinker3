@@ -1,7 +1,7 @@
 // ====================================================
 // Canvas and layout variables
 // ====================================================
-
+let video
 // Width of the webcam/game area.
 let cameraWidth = 800;
 
