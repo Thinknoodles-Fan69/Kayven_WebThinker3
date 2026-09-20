@@ -2,7 +2,7 @@
 // Canvas and layout variables
 // ====================================================
 let video
-let detectedPeople
+let detectedPeople = []
 // Width of the webcam/game area.
 let cameraWidth = 800;
 
