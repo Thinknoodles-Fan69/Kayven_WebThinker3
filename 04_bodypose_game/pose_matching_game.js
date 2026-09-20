@@ -43,6 +43,8 @@ function setup() {
 
     let constraints = {
         video : {
+            width: cameraWidth,
+            height: cameraHeight
             
         }
     }
