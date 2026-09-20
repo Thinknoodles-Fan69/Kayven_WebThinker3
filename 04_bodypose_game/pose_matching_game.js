@@ -78,7 +78,9 @@ function draw() {
     drawDetectionStatus()
 
     if(detectedPeople.length > 0) {
-        
+        let pose = detectedPeople[0];
+
+        let x =
     }
 
 }
