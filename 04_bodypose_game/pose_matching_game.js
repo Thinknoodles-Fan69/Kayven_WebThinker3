@@ -82,7 +82,8 @@ function draw() {
 
         let x = pose.nose.x + cameraX;
         let y = pose.nose.y;
-        fill(255, 0, 0)
+        fill(255, 0, 0);
+        circlr(x, y, 50);
     }
 
 }
