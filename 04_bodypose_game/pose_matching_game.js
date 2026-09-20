@@ -76,7 +76,7 @@ function draw() {
     image(video, cameraX, 0, cameraWidth, cameraHeight);
 
     drawDetectionStatus()
-    
+
     if(detectedPeople.length > 0) {
         let pose = detectedPeople[0];
 
@@ -145,5 +145,5 @@ function drawDetectionStatus() {
     textSize(24);
     text("People detected: " + detectedPeople.length, width/2 , 55);
 
-    console.log(detectedPeople);
+    // console.log(detectedPeople);
 }
