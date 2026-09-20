@@ -28,7 +28,7 @@ let rightPanelX = sidePanelWidth + cameraWidth;
 // ====================================================
 
 function preload(){
-    bodyPose = m15.bodyPose("MoveNet", { flipped: true});
+    bodyPose = ml5.bodyPose("MoveNet", { flipped: true});
 }
 
 // ====================================================
@@ -72,7 +72,7 @@ function draw() {
     // Draw the middle line that separates Player 1 and Player 2 areas.
     drawMiddleLine();
 
-    Image(video, cameraX, 0, cameraWidth, cameraHeight);
+    image(video, cameraX, 0, cameraWidth, cameraHeight);
 
     drawDetectionStatus()
 
