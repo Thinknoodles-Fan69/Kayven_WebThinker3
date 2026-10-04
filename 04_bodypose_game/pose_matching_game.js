@@ -86,7 +86,7 @@ function draw() {
         circle(x, y, 50);
     }
 
-    
+    drawPlayerStatus()
 
 }
 
