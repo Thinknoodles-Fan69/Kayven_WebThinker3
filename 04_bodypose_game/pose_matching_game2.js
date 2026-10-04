@@ -104,9 +104,9 @@ function preload() {
 
     bothHandsUpImg = loadImage("");
     leftHandUpImg = loadImage("");
-    rightHandUpImg = loadImage("images/.png");
-    tPoseImg = loadImage("/.png");
-    handsOnHeadImg = loadImage("/.");
+    rightHandUpImg = loadImage("");
+    tPoseImg = loadImage("");
+    handsOnHeadImg = loadImage("");
 }
 
 
