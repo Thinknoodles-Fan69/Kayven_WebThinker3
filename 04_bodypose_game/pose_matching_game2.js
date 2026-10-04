@@ -312,6 +312,7 @@ function drawPlayerStatus() {
     } else {
         text("Not detected", rightPanelCenterX, 125);
     }
+
 }
 
 
