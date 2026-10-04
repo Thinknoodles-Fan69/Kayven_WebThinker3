@@ -507,3 +507,11 @@ function pointIsReady(point) {
         return false;
     }
 }
+
+
+
+function setup() {
+
+    setupPoseList();
+    currectPose = poseList[0];
+}
