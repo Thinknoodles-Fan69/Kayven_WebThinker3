@@ -514,3 +514,7 @@ function setup() {
     setupPoseList();
     currectPose = poseList[0];
 }
+
+function setupPoseList() {
+    
+}
