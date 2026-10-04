@@ -572,3 +572,7 @@ function drawSharedGameUI() {
     textSize(18);
     text("Poses 5 to test to press 1", width / 2, height - 30);
 }
+
+function drawTargetPose(poseImage, x, y, size) {
+    
+}
