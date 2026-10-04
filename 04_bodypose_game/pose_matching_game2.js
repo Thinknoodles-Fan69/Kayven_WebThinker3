@@ -86,8 +86,8 @@ let poseList = [];
 
 let currectPose = null;
 
-letbothHandsUpImg;
-let
+let bothHandsUpImg;
+let leftHandUpImg;
 
 
 // ====================================================
