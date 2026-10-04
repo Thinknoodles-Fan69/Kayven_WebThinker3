@@ -101,6 +101,8 @@ let handsOnHeadImg;
 function preload() {
     // Load the ML5 BodyPose model.
     bodyPose = ml5.bodyPose("MoveNet", { flipped: true });
+
+    bothHandsUpImg = loadImage("images/both_hands_up.png");
 }
 
 
