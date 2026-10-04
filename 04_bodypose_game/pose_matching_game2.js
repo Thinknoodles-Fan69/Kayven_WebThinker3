@@ -520,7 +520,8 @@ function setupPoseList() {
     poseList = [
         {
             name: "Both Hands Up",
-            id:
+            id: "bothHandsUp",
+            image: bothHandsUpImg
         }
     ]
 }
