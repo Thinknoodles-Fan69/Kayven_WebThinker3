@@ -547,3 +547,8 @@ function setupPoseList() {
         }
     ]
 }
+
+
+function drawSharedGameUI() {
+    
+}
