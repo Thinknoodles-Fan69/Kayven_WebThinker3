@@ -86,6 +86,9 @@ let poseList = [];
 
 let currectPose = null;
 
+letbothHandsUpImg;
+let
+
 
 // ====================================================
 // Load ML5 model
