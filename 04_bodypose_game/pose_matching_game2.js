@@ -186,7 +186,7 @@ function draw() {
     // Draw detection status.
     drawDetectionStatus();
 
-    drawShared
+    drawSharedGameUI();
 }
 
 
