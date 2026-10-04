@@ -84,7 +84,7 @@ let player2Person = null;
 
 let poseList = [];
 
-let currectPose = null;
+let currentPose = null;
 
 let bothHandsUpImg;
 let leftHandUpImg;;
@@ -116,6 +116,9 @@ function preload() {
 
 // setup() runs once at the start.
 function setup() {
+    setupPoseList();
+    currentPose = poseList[0];
+
     // Create the full canvas.
     createCanvas(totalCanvasWidth, cameraHeight);
 
@@ -512,11 +515,6 @@ function pointIsReady(point) {
 
 
 
-function setup() {
-    setupPoseList();
-    currectPose = poseList[0];
-}
-
 function setupPoseList() {
 
     poseList = [
@@ -550,7 +548,7 @@ function setupPoseList() {
 
 
 function drawSharedGameUI() {
-    if (currectPose === null || currectPose === undefined) {
+    if (currentPose === null || currentPose === undefined) {
         return;
     }
     noStroke();
