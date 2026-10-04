@@ -302,7 +302,9 @@ function drawPlayerStatus() {
 
         if (checkCurrentPose(player1Person) === true) {
             fill(80, 255, 120);
-            text("Pose matched!", leftPanelCenterX, 160);
+            text("Pose matched!", leftPanelCenterX, 170);
+        } else {
+            
         }
 
 
