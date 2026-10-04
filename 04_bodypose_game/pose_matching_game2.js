@@ -1,3 +1,22 @@
+/*
+Lesson 3: Assign Player 1 and Player 2
+
+Goal:
+- Continue from Lesson 2
+- Draw body points and skeletons
+- Assign one detected person to Player 1
+- Assign one detected person to Player 2
+- Use the nose position to decide who is on the left and right
+
+Important:
+- No getPoint()
+- No getScreenX()
+- No getScreenY()
+- No game states yet
+- No pose checking yet
+- No hand raise start yet
+*/
+
 // ====================================================
 // Canvas and layout variables
 // ====================================================
@@ -20,32 +39,57 @@ let cameraX = sidePanelWidth;
 // x-position of the left panel.
 let leftPanelX = 0;
 
+// Center x-position of the left panel.
+let leftPanelCenterX = sidePanelWidth / 2;
+
 // x-position of the right panel.
 let rightPanelX = sidePanelWidth + cameraWidth;
 
-// ====================================================
-// Variables
-// ====================================================
+// Center x-position of the right panel.
+let rightPanelCenterX = rightPanelX + sidePanelWidth / 2;
 
-let video; // Variable to hold the webcam video feed.
-
-let bodyPose; // Variable to hold the body pose model.
-
-let detectedPeople = []; // Array to hold detected people.
-
+// Player 1 colour.
 let player1Color;
+
+// Player 2 colour.
 let player2Color;
 
+
+// ====================================================
+// ML5 body tracking variables
+// ====================================================
+
+// Stores the webcam video.
+let video;
+
+// Stores the ML5 BodyPose model.
+let bodyPose;
+
+// Stores all detected people from ML5.
+let detectedPeople = [];
+
+
+// ====================================================
+// Player body variables
+// ====================================================
+
+// Stores the detected body assigned to Player 1.
 let player1Person = null;
+
+// Stores the detected body assigned to Player 2.
 let player2Person = null;
 
+
 // ====================================================
-// Preload
+// Load ML5 model
 // ====================================================
 
-function preload(){
+// preload() runs before setup().
+function preload() {
+    // Load the ML5 BodyPose model.
     bodyPose = ml5.bodyPose("MoveNet", { flipped: true });
 }
+
 
 // ====================================================
 // Setup
@@ -53,29 +97,43 @@ function preload(){
 
 // setup() runs once at the start.
 function setup() {
+    // Create the full canvas.
+    createCanvas(totalCanvasWidth, cameraHeight);
 
-    // Set up text.
-    textAlign(CENTER, CENTER);
+    // Set Player 1 colour.
+    player1Color = color(80, 180, 255);
 
-    let canvas = createCanvas(totalCanvasWidth, cameraHeight);
+    // Set Player 2 colour.
+    player2Color = color(255, 120, 120);
 
+    // Set up webcam constraints.
     let constraints = {
         video: {
             width: cameraWidth,
             height: cameraHeight,
             aspectRatio: cameraWidth / cameraHeight
         },
+
+        // Turn off audio because we only need video.
         audio: false,
-        flipped: true // Flip the webcam feed horizontally for a mirror effect.
+
+        // Makes the video mirrored.
+        flipped: true
     };
 
+    // Create webcam capture.
     video = createCapture(constraints);
+
+    // Hide the default webcam HTML element.
+    // We draw the webcam on the canvas ourselves.
     video.hide();
 
+    // Start ML5 body detection.
+    // Whenever ML5 detects people, it calls gotPoses().
     bodyPose.detectStart(video, gotPoses);
 
-    player1Color = color(80, 180, 255);
-    player2Color = color(255, 120, 120);
+    // Set up text.
+    textAlign(CENTER, CENTER);
 }
 
 
@@ -87,19 +145,51 @@ function setup() {
 function draw() {
     // Clear the canvas with a dark background.
     background(30);
-    // Display the webcam video feed.
-    image(video, cameraX, 0, cameraWidth, cameraHeight);  
-    
+
+    // Draw the webcam.
+    drawCamera();
+
+    // Decide which detected body belongs to Player 1 and Player 2.
     findPlayers();
-    drawPlayersSkeletons();
+
+    // Draw skeletons for Player 1 and Player 2.
+    drawPlayerSkeletons();
 
     // Draw the side panels.
     drawUIPanel();
+
     // Draw the middle line that separates Player 1 and Player 2 areas.
     drawMiddleLine();
+
+    // Draw Player 1 and Player 2 status.
+    drawPlayerStatus();
+
     // Draw detection status.
     drawDetectionStatus();
 }
+
+
+// ====================================================
+// Receive ML5 results
+// ====================================================
+
+// gotPoses() runs whenever ML5 sends new detection results.
+function gotPoses(results) {
+    // Store the latest detected people.
+    detectedPeople = results;
+}
+
+
+// ====================================================
+// Draw camera
+// ====================================================
+
+// Draws the webcam on the canvas.
+function drawCamera() {
+    // Draw the webcam.
+    image(video, cameraX, 0, cameraWidth, cameraHeight);
+}
+
 
 // ====================================================
 // Draw side UI panels
@@ -109,18 +199,25 @@ function draw() {
 function drawUIPanel() {
     // Remove outlines.
     noStroke();
+
     // Set panel colour.
     fill(20);
+
     // Draw left panel.
     rect(leftPanelX, 0, sidePanelWidth, cameraHeight);
+
     // Draw right panel.
     rect(rightPanelX, 0, sidePanelWidth, cameraHeight);
+
     // Set divider line colour.
     stroke(255, 180);
+
     // Set divider line thickness.
     strokeWeight(2);
+
     // Draw line between left panel and webcam.
     line(sidePanelWidth, 0, sidePanelWidth, cameraHeight);
+
     // Draw line between webcam and right panel.
     line(rightPanelX, 0, rightPanelX, cameraHeight);
 }
@@ -134,31 +231,162 @@ function drawUIPanel() {
 function drawMiddleLine() {
     // Set line colour to white with transparency.
     stroke(255, 180);
+
     // Set line thickness.
     strokeWeight(2);
+
     // Draw the middle line inside the webcam area.
-    line(width / 2, 0, width / 2, cameraHeight);
+    line(cameraX + cameraWidth / 2, 0, cameraX + cameraWidth / 2, cameraHeight);
 }
 
-function gotPoses(results) {
-    detectedPeople = results;
-}
 
+// ====================================================
+// Draw detection status
+// ====================================================
+
+// Shows how many people ML5 can detect.
 function drawDetectionStatus() {
-    // Set text colour to white.
-    fill(0);
+    // Draw dark transparent status box.
+    noStroke();
+    fill(0, 150);
+    rect(width / 2 - 180, 20, 360, 70, 12);
+
+    // Draw status text.
+    fill(255);
     textSize(24);
-    text("Detected People: " + detectedPeople.length, width / 2, 55);
+    text("People detected: " + detectedPeople.length, width / 2, 55);
 }
 
-function drawAllSkeletons() {
-    for (let i = 0; i < detectedPeople.length; i++) {
-        let person = detectedPeople[i];
 
-        drawSkeleton(person, player1Color);
+// ====================================================
+// Draw player status
+// ====================================================
+
+// Shows whether Player 1 and Player 2 are detected.
+function drawPlayerStatus() {
+    
+    noStroke();
+    textSize(28);
+    fill(255);
+
+    // // Draw Player 1 title.
+    // text("Player 1", leftPanelCenterX, 80);
+
+    // Draw Player 1 status.
+    if (player1Person !== null) {
+        text("Detected", leftPanelCenterX, 125);
+    } else {
+        text("Not detected", leftPanelCenterX, 125);
+    }
+
+    // // Draw Player 2 title.
+    // text("Player 2", rightPanelCenterX, 80);
+
+    // Draw Player 2 status.
+    if (player2Person !== null) {
+        text("Detected", rightPanelCenterX, 125);
+    } else {
+        text("Not detected", rightPanelCenterX, 125);
     }
 }
 
+
+// ====================================================
+// Find Player 1 and Player 2 from detected people
+// ====================================================
+
+// Assigns detected people to Player 1 and Player 2.
+function findPlayers() {
+    // Reset Player 1 every frame before checking again.
+    player1Person = null;
+
+    // Reset Player 2 every frame before checking again.
+    player2Person = null;
+
+    // Start with a very large number for Player 1 distance.
+    let bestPlayer1Distance = 99999;
+
+    // Start with a very large number for Player 2 distance.
+    let bestPlayer2Distance = 99999;
+
+    // Player 1 target area is around the left quarter of the webcam.
+    let player1CenterX = cameraX + cameraWidth / 4;
+
+    // Player 2 target area is around the right quarter of the webcam.
+    let player2CenterX = cameraX + cameraWidth * 3 / 4;
+
+    // The middle x-position of the webcam.
+    let cameraMiddleX = cameraX + cameraWidth / 2;
+
+    // Loop through every detected person.
+    for (let i = 0; i < detectedPeople.length; i++) {
+        // Get one detected person.
+        let person = detectedPeople[i];
+
+        // Get the nose point directly using dot notation.
+        let nose = person.nose;
+
+        // Continue only if the nose is detected clearly.
+        if (pointIsReady(nose)) {
+            // Convert the nose x-position to canvas position.
+            let noseX = cameraX + nose.x;
+
+            // If the nose is on the left side, this person may be Player 1.
+            if (noseX < cameraMiddleX) {
+                // Measure distance from Player 1's ideal area.
+                let distanceFromPlayer1Area = abs(noseX - player1CenterX);
+
+                // Keep this person if they are closer than the previous Player 1 candidate.
+                if (distanceFromPlayer1Area < bestPlayer1Distance) {
+                    // Assign this person as Player 1.
+                    player1Person = person;
+
+                    // Update best Player 1 distance.
+                    bestPlayer1Distance = distanceFromPlayer1Area;
+                }
+
+            // Otherwise, this person may be Player 2.
+            } else {
+                // Measure distance from Player 2's ideal area.
+                let distanceFromPlayer2Area = abs(noseX - player2CenterX);
+
+                // Keep this person if they are closer than the previous Player 2 candidate.
+                if (distanceFromPlayer2Area < bestPlayer2Distance) {
+                    // Assign this person as Player 2.
+                    player2Person = person;
+
+                    // Update best Player 2 distance.
+                    bestPlayer2Distance = distanceFromPlayer2Area;
+                }
+            }
+        }
+    }
+}
+
+
+// ====================================================
+// Draw player skeletons
+// ====================================================
+
+// Draws skeletons for Player 1 and Player 2.
+function drawPlayerSkeletons() {
+    // Draw Player 1 skeleton only if Player 1 is detected.
+    if (player1Person !== null) {
+        drawSkeleton(player1Person, player1Color);
+    }
+
+    // Draw Player 2 skeleton only if Player 2 is detected.
+    if (player2Person !== null) {
+        drawSkeleton(player2Person, player2Color);
+    }
+}
+
+
+// ====================================================
+// Draw one person's skeleton
+// ====================================================
+
+// Draws one person's skeleton.
 function drawSkeleton(person, skeletonColor) {
     // Set skeleton line colour.
     stroke(skeletonColor);
@@ -208,74 +436,55 @@ function drawSkeleton(person, skeletonColor) {
     drawBodyPoint(person.right_hip);
 }
 
+
+// ====================================================
+// Draw body line
+// ====================================================
+
+// Draws a line between two body points.
 function drawBodyLine(point1, point2) {
+    // Only draw the line if both points are detected clearly.
     if (pointIsReady(point1) && pointIsReady(point2)) {
-        line(point1.x + cameraX, point1.y, point2.x + cameraX, point2.y)
+        // Draw the line using screen positions.
+        line(
+            cameraX + point1.x,
+            point1.y,
+            cameraX + point2.x,
+            point2.y
+        );
     }
 }
 
+
+// ====================================================
+// Draw body point
+// ====================================================
+
+// Draws one body point as a circle.
 function drawBodyPoint(point) {
+    // Only draw the circle if the point is detected clearly.
     if (pointIsReady(point)) {
-        circle(point.x + cameraX, point.y, 8);
+        // Draw a small circle at the body point position.
+        circle(cameraX + point.x, point.y, 8);
     }
 }
 
+
+// ====================================================
+// Check if ML5 found a body point clearly
+// ====================================================
+
+// Checks whether a body point is reliable enough to use.
 function pointIsReady(point) {
+    // If the point does not exist, it is not ready.
     if (point === null || point === undefined) {
         return false;
     }
 
+    // Use the point only if confidence is high enough.
     if (point.confidence > 0.25) {
         return true;
     } else {
         return false;
-    }
-}
-
-function findPlayers() {
-    player1Person = null;
-    player2Person = null;
-
-    let bestPlayer1Distance = 99999;
-    let bestPlayer2Distance = 99999;
-
-    let player1CenterX = cameraX + cameraWidth / 4;
-    let player2CenterX = cameraX + cameraWidth * 3 / 4;
-
-    let cameraMiddleX = cameraX + cameraWidth / 2;
-
-    for (let i = 0; i < detectedPeople.length; i++) {
-        let person = detectedPeople[i];
-        let nose = person.nose;
-
-        if (pointIsReady(nose)) {
-            let noseX = cameraX + nose.x;
-
-            if (noseX < cameraMiddleX) {
-                let distanceFromPlayer1Area = abs(noseX - player1CenterX);
-
-                if (distanceFromPlayer1Area < bestPlayer1Distance) {
-                    player1Person = person;
-                    bestPlayer1Distance = distanceFromPlayer1Area;
-                }
-            } else {
-                let distanceFromPlayer2Area = abs(noseX - player2CenterX);
-
-                if (distanceFromPlayer2Area < bestPlayer2Distance) {
-                    player2Person = person;
-                    bestPlayer2Distance = distanceFromPlayer2Area;
-                }
-            }
-        }
-    }
-}
-
-function drawPlayersSkeletons() {
-    if (player1Person !== null) {
-        drawSkeleton(player1Person, player1Color);
-    }
-
-    if (player2Person !== null) {
-        drawSkeleton(player2Person, player2Color);
     }
 }
