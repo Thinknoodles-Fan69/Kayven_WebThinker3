@@ -150,5 +150,6 @@ function drawDetectionStatus() {
 
 function drawPlayerStatus() {
     noStroke();
-    
+    textSize(28);
+    fill(255);
 }
