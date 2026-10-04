@@ -304,7 +304,8 @@ function drawPlayerStatus() {
             fill(80, 255, 120);
             text("Pose matched!", leftPanelCenterX, 170);
         } else {
-            
+            fill(255);
+            text("Pose not matched", leftPanelCenterX, 170);
         }
 
 
