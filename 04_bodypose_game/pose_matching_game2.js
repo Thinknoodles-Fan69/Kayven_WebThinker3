@@ -511,7 +511,6 @@ function pointIsReady(point) {
 
 
 function setup() {
-
     setupPoseList();
     currectPose = poseList[0];
 }
