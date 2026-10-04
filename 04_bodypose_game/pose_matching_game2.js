@@ -556,5 +556,9 @@ function drawSharedGameUI() {
     noStroke();
     
     fill(0, 135);
-    rect(cameraX + 190, 8, )
+    rect(cameraX + 190, 8, 420, 90, 12);
+
+    fill(255);
+    textSize(24);
+    text("Match this pose!", cameraX + 400, 35);
 }
