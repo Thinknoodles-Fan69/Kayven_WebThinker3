@@ -147,3 +147,8 @@ function drawDetectionStatus() {
 
     // console.log(detectedPeople);
 }
+
+function drawPlayerStatus() {
+    noStroke();
+    
+}
