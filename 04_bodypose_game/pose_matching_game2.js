@@ -566,5 +566,6 @@ function drawSharedGameUI() {
     textSize(28);
     text(currentPose.name, width / 2, 65);
 
-    drawTargetPose(currentPose.image, width / 2, height / 2)
+    drawTargetPose(currentPose.image, width / 2, height / 2 + 55, 238);
+    
 }
