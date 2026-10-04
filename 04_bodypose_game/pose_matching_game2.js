@@ -527,7 +527,7 @@ function setupPoseList() {
             name: "Left Hand Up",
             id: "leftHandUp",
             image: leftHandUpImg
-        },
+        },  
         {
             name: "Right Hand Up",
             id: "rightHandUp",
