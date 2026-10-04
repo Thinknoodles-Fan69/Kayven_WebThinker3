@@ -105,7 +105,7 @@ function preload() {
     bothHandsUpImg = loadImage("assets/poseBattle_bothHandsUp.png");
     leftHandUpImg = loadImage("assets/poseBattle_leftHandUp.png");
     rightHandUpImg = loadImage("assets/poseBattle_rightHandUp.png");
-    tPoseImg = loadImage("assets/poseBattle_tPose.png");
+    tPoseImg = loadImage("assets/poseBattle_tpose.png");
     handsOnHeadImg = loadImage("assets/poseBattle_handsOnHead.png");
 }
 
