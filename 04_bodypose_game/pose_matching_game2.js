@@ -570,5 +570,5 @@ function drawSharedGameUI() {
 
     fill(255);
     textSize(18);
-    text("Press SPACEBAR to change pose", width / 2, height - 20);
+    text("Press SPACEBAR to change pose", width / 2, height - 30);
 }
