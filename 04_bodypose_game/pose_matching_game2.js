@@ -578,4 +578,6 @@ function drawTargetPose(poseImage, x, y, size) {
     imageMode(CENTER);
 
     imade(poseImage, x, y, size, size);
+
+    imageMode(CORNER);
 }
