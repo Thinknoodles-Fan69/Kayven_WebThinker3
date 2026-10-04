@@ -527,6 +527,21 @@ function setupPoseList() {
             name: "Left Hand Up",
             id: "leftHandUp",
             image: leftHandUpImg
+        },
+        {
+            name: "Right Hand Up",
+            id: "rightHandUp",
+            image: rightHandUpImg
+        },
+        {
+            name: "T Pose",
+            id: "tPose",
+            image: tPoseImg
+        },
+        {
+            name: "Hands On Head",
+            id: "handsOnHead",
+            image: handsOnHeadImg
         }
     ]
 }
