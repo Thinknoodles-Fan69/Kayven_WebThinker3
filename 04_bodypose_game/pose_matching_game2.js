@@ -102,7 +102,7 @@ function preload() {
     // Load the ML5 BodyPose model.
     bodyPose = ml5.bodyPose("MoveNet", { flipped: true });
 
-    bothHandsUpImg = loadImage("");
+    bothHandsUpImg = loadImage("assets/poseBattle_bothHandsUp.png");
     leftHandUpImg = loadImage("");
     rightHandUpImg = loadImage("");
     tPoseImg = loadImage("");
