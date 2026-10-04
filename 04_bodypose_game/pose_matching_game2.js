@@ -561,4 +561,6 @@ function drawSharedGameUI() {
     fill(255);
     textSize(24);
     text("Match this pose!", width / 2, 30);
+
+    fill(255,)
 }
