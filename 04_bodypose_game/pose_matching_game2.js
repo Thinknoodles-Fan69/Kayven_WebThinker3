@@ -519,7 +519,8 @@ function setupPoseList() {
 
     poseList = [
         {
-            name:
+            name: "Both Hands Up",
+            id:
         }
     ]
 }
