@@ -24,6 +24,8 @@ let leftPanelX = 0;
 // x-position of the right panel.
 let rightPanelX = sidePanelWidth + cameraWidth;
 
+let leftPanelCenterX = sidePanelWidth / 2;
+
 // ====================================================
 // Preload
 // ====================================================
