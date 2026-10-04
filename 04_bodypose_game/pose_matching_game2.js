@@ -550,5 +550,7 @@ function setupPoseList() {
 
 
 function drawSharedGameUI() {
-    
+    if (currectPose === null || currectPose === undefined) {
+        return;
+    }
 }
