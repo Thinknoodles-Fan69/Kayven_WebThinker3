@@ -25,6 +25,7 @@ let leftPanelX = 0;
 let rightPanelX = sidePanelWidth + cameraWidth;
 
 let leftPanelCenterX = sidePanelWidth / 2;
+let rightPanelCenterX = rightPanelX + sidePanelWidth / 2;
 
 // ====================================================
 // Preload
