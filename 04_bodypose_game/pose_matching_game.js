@@ -152,4 +152,10 @@ function drawPlayerStatus() {
     noStroke();
     textSize(28);
     fill(255);
+
+    if (player1Person !== null) {
+        text("Detected", leftPanelCenterX, 125);
+    } else {
+        text("Not Detected", leftPanelCenterX, 125);
+    }
 }
