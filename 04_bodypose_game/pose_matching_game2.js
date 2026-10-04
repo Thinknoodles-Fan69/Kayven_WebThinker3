@@ -516,5 +516,10 @@ function setup() {
 }
 
 function setupPoseList() {
-    
+
+    poseList = [
+        {
+            name:
+        }
+    ]
 }
