@@ -554,5 +554,7 @@ function drawSharedGameUI() {
         return;
     }
     noStroke();
-      
+    
+    fill(0, 135);
+    rect
 }
