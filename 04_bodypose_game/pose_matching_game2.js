@@ -103,6 +103,10 @@ function preload() {
     bodyPose = ml5.bodyPose("MoveNet", { flipped: true });
 
     bothHandsUpImg = loadImage("images/both_hands_up.png");
+    leftHandUpImg = loadImage("images/left_hand_up.png");
+    rightHandUpImg = loadImage("images/right_hand_up.png");
+    tPoseImg = loadImage("images/t_pose.png");
+    handsOnHeadImg = loadImage("images/hands_on_head.png");
 }
 
 
