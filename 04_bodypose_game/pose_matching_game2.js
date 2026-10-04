@@ -300,7 +300,11 @@ function drawPlayerStatus() {
     if (player1Person !== null) {
         text("Detected", leftPanelCenterX, 125);
 
-        if (checkCurrentPose(player1Person) === true)
+        if (checkCurrentPose(player1Person) === true) {
+            fill(80,)
+        }
+
+
     } else {
         text("Not detected", leftPanelCenterX, 125);
     }
