@@ -82,7 +82,9 @@ let player2Person = null;
 
 
 
-let 
+let poseList = []
+
+let currectPose = null
 
 
 // ====================================================
