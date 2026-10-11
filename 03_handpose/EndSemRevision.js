@@ -48,9 +48,8 @@ function gotHands(results){
 }
 
 function draw () {
-    image(video, 0, 0, width, height);
-
     background("black")  
+    image(video, 0, 0, width, height);
 
     for (let i = 0; i < hands.length; i++) {
         let hand = hands[i];
