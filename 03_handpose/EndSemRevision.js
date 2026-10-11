@@ -49,8 +49,8 @@ function setup () {
     ball.y = 100;
 
     fingerTip = new Sprite();
-    fingerTip.width = 67
-    fingerTip.height =     
+    fingerTip.width = 300
+    fingerTip.height = 200    
     fingerTip.collider = "dynamic";
     fingerTip.color = "rgba(12, 233, 0, 0.5)"
 
