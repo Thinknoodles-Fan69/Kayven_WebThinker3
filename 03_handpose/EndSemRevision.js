@@ -39,7 +39,7 @@ function setup () {
 
     handPose.detectStart(video, gotHands);
 
-        let fingerTip = 
+        
 
 
 }
