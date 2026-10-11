@@ -3,6 +3,7 @@ let hands = [];
 let video;
 let ball; 
 let fingerTip;
+let score = 0;
 
 function preload(){
 
@@ -99,7 +100,6 @@ function draw () {
 
     if (ball.collides(fingerTip)) {
         score += 1
-        
     }
 
     
