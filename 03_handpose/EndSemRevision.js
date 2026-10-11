@@ -61,8 +61,8 @@ function setup () {
     textAlign(CENTER, CENTER);
     fill("magenta");
     text("GAME OVER", width/2, height/2);
-    textSize(18);
-    text("RESTART PRESS TO SPACE", width/2, height/2 + 40);
+
+
 
 
         
