@@ -1,6 +1,7 @@
 let handPose;
 let hands = [];
 let video;
+let ball; 
 
 function preload(){
 
