@@ -93,8 +93,8 @@ function draw () {
     }
 
 
-    fingerTip.x = hands[0].keypoints[8].x
-    fingerTip.y = hands[0].keypoints[8].y
+    // fingerTip.x = hands[0].keypoints[8].x
+    // fingerTip.y = hands[0].keypoints[8].y
 
     
 }
