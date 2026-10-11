@@ -57,7 +57,12 @@ function setup () {
     fingerTip.color = "rgba(12, 233, 0, 0.5)"
 
 
-    
+    textSize(36);
+    textAlign(CENTER, CENTER);
+    fill("magenta");
+    text("GAME OVER", width/2, height/2);
+    textSize(18);
+    text("RESTART PRESS TO SPACE", width/2, height/2 + 40);
 
 
         
