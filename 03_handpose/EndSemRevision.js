@@ -54,8 +54,6 @@ function setup () {
     fingerTip.collider = "kinematic";
     fingerTip.color = "rgba(12, 233, 0, 0.5)"
 
-    fingerTip.x = hands[0].keypoints[8].x
-    fingerTip.y = hands[0].keypoints[8].y
 
 
 
@@ -85,5 +83,9 @@ function draw () {
             circle(keypoint.x, keypoint.y, 10);
         }
     }
+
+        fingerTip.x = hands[0].keypoints[8].x
+    fingerTip.y = hands[0].keypoints[8].y
+
     
 }
