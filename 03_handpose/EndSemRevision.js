@@ -13,10 +13,10 @@ function preload(){
     }
 
     handPose = ml5.handPose(options);
-}
+}   
 
 function setup () {
-    AudioWorkletNode.gravity.world = 5
+    world.gravity.y = 5
 
 
     new Canvas(640, 480);
