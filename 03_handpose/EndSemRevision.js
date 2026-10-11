@@ -61,7 +61,7 @@ function setup () {
     textAlign(TOP, CENTER);
     fill("black");
     text("score: " + score, 40, 240);
-    fill("white")
+    
 
 
 
@@ -76,7 +76,7 @@ function gotHands(results){
     hands = results;
 
 }
-
+    
 function draw () {
     background("black")  
     image(video, 0, 0, width, height);
