@@ -16,7 +16,8 @@ function preload(){
 }
 
 function setup () {
-    world.gravi 
+    AudioWorkletNode.gravity.y = 5
+    
 
     new Canvas(640, 480);
 
