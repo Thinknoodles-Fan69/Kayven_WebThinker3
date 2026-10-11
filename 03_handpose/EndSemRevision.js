@@ -11,7 +11,7 @@ function preload(){
         detectorModelUrl: undefined,
         landmarkModeUrl: undefined,
     }
-
+    
     handPose = ml5.handPose(options);
 }   
 
