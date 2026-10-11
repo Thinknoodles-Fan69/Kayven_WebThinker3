@@ -80,6 +80,7 @@ function gotHands(results){
 function draw () {
     background("black")  
     image(video, 0, 0, width, height);
+    fill("white")
 
 
     for (let i = 0; i < hands.length; i++) {
