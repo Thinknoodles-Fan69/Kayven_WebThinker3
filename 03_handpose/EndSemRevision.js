@@ -97,5 +97,10 @@ function draw () {
     // fingerTip.x = hands[0].keypoints[8].x
     // fingerTip.y = hands[0].keypoints[8].y
 
+    if (ball.collides(fingerTip)) {
+        score += 1
+        
+    }
+
     
 }
