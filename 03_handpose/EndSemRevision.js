@@ -39,6 +39,9 @@ function setup () {
 
     handPose.detectStart(video, gotHands);
 
+
+    let 
+
 }
 
 function gotHands(results){
@@ -50,7 +53,7 @@ function gotHands(results){
 function draw () {
     background("black")  
     image(video, 0, 0, width, height);
-    
+
 
     for (let i = 0; i < hands.length; i++) {
         let hand = hands[i];
