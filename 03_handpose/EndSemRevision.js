@@ -41,7 +41,7 @@ function setup () {
     handPose.detectStart(video, gotHands);
 
     ball = new Sprite()
-    ball.w = 100
+    ball.collider = 100
     ball.h = 100
 
         
