@@ -42,7 +42,7 @@ function setup () {
 
     ball = new Sprite();
     ball.diameter = 60;
-    ball.collider = "static";
+    ball.collider = "";
     ball.color = "black";
     ball.x = width/2;
     ball.y = 100;
