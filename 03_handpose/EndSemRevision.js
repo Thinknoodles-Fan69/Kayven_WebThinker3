@@ -88,8 +88,8 @@ function draw () {
         let hand = hands[0];
         let pointer = hand.keypoints[8];
         
-        fingerTip.x = pointer.x
-        fingerTip.y = pointer.y
+        fingerTip.x = pointer.x;
+        fingerTip.y = pointer.y;
     }
 
 
