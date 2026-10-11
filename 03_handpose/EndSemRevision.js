@@ -41,8 +41,11 @@ function setup () {
     handPose.detectStart(video, gotHands);
 
     ball = new Sprite();
-    ball.collider = 
-    ball.h = 100
+    ball.diameter = 60;
+    bal.collider = "static";
+    ball.color = "black";
+    balln.x = width/2;
+    balloon.y = 100;
 
         
 
