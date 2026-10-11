@@ -42,10 +42,10 @@ function setup () {
 
     ball = new Sprite();
     ball.diameter = 60;
-    bal.collider = "static";
+    ball.collider = "static";
     ball.color = "black";
-    balln.x = width/2;
-    balloon.y = 100;
+    ball.x = width/2;
+    ball.y = 100;
 
         
 
