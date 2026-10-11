@@ -2,6 +2,7 @@ let handPose;
 let hands = [];
 let video;
 let ball; 
+let fingerTip;
 
 function preload(){
 
@@ -47,7 +48,7 @@ function setup () {
     ball.x = width/2;
     ball.y = 100;
 
-    
+
 
         
 
