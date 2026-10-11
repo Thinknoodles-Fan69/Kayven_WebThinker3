@@ -55,7 +55,8 @@ function setup () {
     fingerTip.color = "rgba(12, 233, 0, 0.5)"
 
     fingerTip.x = hands[0].keypoints[8].x
-    
+    fingerTip.y = hands[0].keypoints[8].y
+
 
 
 
