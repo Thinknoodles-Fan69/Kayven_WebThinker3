@@ -54,7 +54,7 @@ function setup () {
     fingerTip.collider = "kinematic";
     fingerTip.color = "rgba(12, 233, 0, 0.5)"
 
-    fingerTip = hand.keypoints[7]
+    fingerTip = hands.keypoints[7]
 
 
 
