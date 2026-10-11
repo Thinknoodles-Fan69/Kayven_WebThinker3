@@ -61,6 +61,7 @@ function setup () {
     textAlign(TOP, CENTER);
     fill("black");
     text("score: " + score, 40, 240);
+    fill("white")
 
 
 
