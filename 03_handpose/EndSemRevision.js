@@ -57,10 +57,7 @@ function setup () {
     fingerTip.color = "rgba(12, 233, 0, 0.5)"
 
 
-    textSize(36);
-    textAlign(TOP, CENTER);
-    fill("black");
-    text("score: " + score, width/2, 240);
+    
     
 
 
@@ -81,6 +78,11 @@ function draw () {
     background("black")  
     image(video, 0, 0, width, height);
     fill("white")
+
+    textSize(36);
+    textAlign(TOP, CENTER);
+    fill("black");
+    text("score: " + score, width/2, 240);
 
 
     for (let i = 0; i < hands.length; i++) {
