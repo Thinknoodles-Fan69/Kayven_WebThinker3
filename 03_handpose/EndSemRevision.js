@@ -42,10 +42,12 @@ function setup () {
 
     ball = new Sprite();
     ball.diameter = 60;
-    ball.collider = "";
+    ball.collider = "dynamic";
     ball.color = "black";
     ball.x = width/2;
     ball.y = 100;
+
+    
 
         
 
