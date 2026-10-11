@@ -85,7 +85,8 @@ function draw () {
     }
 
     if(hands.length > 0) {
-        
+        let hand = hands[0];
+        let pointer
     }
 
 
