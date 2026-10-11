@@ -47,6 +47,7 @@ function setup () {
     ball.color = "black";
     ball.x = width/2;
     ball.y = 100;
+    ball.bounciness = 100;
 
     fingerTip = new Sprite();
     fingerTip.width = 300
