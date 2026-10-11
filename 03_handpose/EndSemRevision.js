@@ -51,7 +51,7 @@ function setup () {
     fingerTip = new Sprite();
     fingerTip.width = 300
     fingerTip.height = 20
-    fingerTip.collider = "dynamic";
+    fingerTip.collider = "kinematic";
     fingerTip.color = "rgba(12, 233, 0, 0.5)"
 
 
