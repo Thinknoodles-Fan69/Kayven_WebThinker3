@@ -109,6 +109,7 @@ function draw () {
 
     if (ball.collides(fingerTip)) {
         score += 1
+
     }
 
     
