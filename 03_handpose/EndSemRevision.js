@@ -84,8 +84,11 @@ function draw () {
         }
     }
 
+    if(hands.length > 0) {
+        
+    }
 
-    
+
     fingerTip.x = hands[0].keypoints[8].x
     fingerTip.y = hands[0].keypoints[8].y
 
