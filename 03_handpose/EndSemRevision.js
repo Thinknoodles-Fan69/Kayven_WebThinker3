@@ -24,8 +24,8 @@ function setup () {
     let constraints = {
         video:{
             mandatory:{
-                midWidth: width,
-                minHeight: height
+                midWidth: videoW,
+                minHeight: videoH
             },
             optional: [{minFrameRate: 60}]
         },
@@ -49,7 +49,7 @@ function gotHands(results){
 
 function draw () {
     image(video, 0, 0, width, height);
-    
+
     background("black")  
 
     for (let i = 0; i < hands.length; i++) {
