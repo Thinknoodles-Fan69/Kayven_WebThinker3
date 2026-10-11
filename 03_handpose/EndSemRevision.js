@@ -60,7 +60,7 @@ function setup () {
     textSize(36);
     textAlign(TOP, CENTER);
     fill("black");
-    text("score", width/2, height/2);
+    text("score: " + score, width/2, height/2);
 
 
 
