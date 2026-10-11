@@ -40,8 +40,8 @@ function setup () {
 
     handPose.detectStart(video, gotHands);
 
-    ball = new Sprite()
-    ball.collider = 100
+    ball = new Sprite();
+    ball.collider = 
     ball.h = 100
 
         
