@@ -11,7 +11,7 @@ function preload(){
         detectorModelUrl: undefined,
         landmarkModeUrl: undefined,
     }
-    
+
     handPose = ml5.handPose(options);
 }   
 
@@ -48,6 +48,7 @@ function gotHands(results){
 }
 
 function draw () {
+    image(video, 0, 0, videoW, videoH);
     background("black")  
 
     for (let i = 0; i < hands.length; i++) {
