@@ -58,10 +58,10 @@ function setup () {
 
 
     textSize(36);
-    textAlign(CENTER, CENTER);
-    fill("magenta");
+    textAlign(TOP, CENTER);
+    fill("black");
     text("GAME OVER", width/2, height/2);
-
+2
 
 
 
