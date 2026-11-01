@@ -1090,6 +1090,9 @@ function startGame() {
     player1Score = 0;
     player2Score = 0;
     roundNumber = 0;
+
+    successEffectPlayer = 0;
+    successEffectStartTime = 0;
     makePoseOrder();
     startRound();  
 }
