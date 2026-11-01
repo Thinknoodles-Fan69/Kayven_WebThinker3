@@ -70,6 +70,7 @@ let successEffectPlayer = 0;
 
 let totalRounds = 5;
 let roundNumber = 0;
+let gameComplete = false;
 
 
 // ====================================================
@@ -1028,10 +1029,15 @@ function drawGameUI(timeLeft) {
 
 
 function endRound() {
-    roundNumber += 1;
+    if (gameComplete === true) {
+        return;
+    }
 
-    if (roundNumber < totalRounds) {
+    if (roundNumber + 1 < totalRounds) {
+        roundNumber += 1;
         startRound();
+    } else {
+        gameComplete = true;
     }
 
 }
@@ -1039,7 +1045,7 @@ function endRound() {
 function startRound() {
     currentPose = poseList[roundNumber];
 
-    player1Scored === false;
-    player2Scored === false;
+    player1Scored = false;
+    player2Scored = false;
     successEffectPlayer = 0;
 }
