@@ -596,7 +596,7 @@ function setupPoseList() {
 }
 
 
-function drawSharedGameUI() {
+function drawSharedGameUI(timeLeft) {
     if (currentPose === null || currentPose === undefined) {
         return;
     }
