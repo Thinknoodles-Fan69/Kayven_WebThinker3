@@ -937,8 +937,9 @@ function runPlayState() {
         let effectTime = millis() - successEffectStartTime;
 
         if (effectTime > successEffectDuration) {
-            
+            endRound();
         }
+        return;
     }
 
 }
