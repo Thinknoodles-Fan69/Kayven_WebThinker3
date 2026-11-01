@@ -1062,5 +1062,6 @@ function startRound() {
 }
 
 function makePoseOrder() {
+    poseOrder = [];
     
 }
