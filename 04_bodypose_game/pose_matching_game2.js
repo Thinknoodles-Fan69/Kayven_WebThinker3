@@ -950,7 +950,7 @@ function runPlayState() {
 
 }
 
-function drawGameUI() {
+function drawGameUI(timeLeft) {
     drawSharedGameUI();
 } 
 
