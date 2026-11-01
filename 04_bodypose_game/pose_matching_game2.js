@@ -937,7 +937,6 @@ function runPlayState() {
         let effectTime = millis() - successEffectStartTime;
     }
 
-    
 }
 
 function drawGameUI() {
