@@ -68,7 +68,7 @@ let successEffectDuration = 900;
 
 let successEffectPlayer = 0;
 
-let T
+let totalRounds
 
 
 // ====================================================
