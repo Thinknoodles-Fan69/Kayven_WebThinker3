@@ -932,6 +932,10 @@ function keyPressed() {
 function runPlayState() {
     drawGameUI();
     checkPlayerScores();
+
+    if(player1Scored === true || player2Scored === true) {
+        
+    }
 }
 
 function drawGameUI() {
@@ -1022,5 +1026,5 @@ function endRound() {
     if (roundNumber < totalRounds) {
         startRound();
     }
-    
+
 }
