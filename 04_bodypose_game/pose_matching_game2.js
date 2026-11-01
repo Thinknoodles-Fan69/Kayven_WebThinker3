@@ -142,6 +142,7 @@ function preload() {
 function setup() {
     setupPoseList();
     // currentPose = poseList[0];
+    makePoseOrder();
     startRound();
 
     // Create the full canvas.
@@ -182,8 +183,7 @@ function setup() {
     // Set up text.
     textAlign(CENTER, CENTER);
 
-    makePoseOrder();
-    startRound();
+   
 }
 
 
