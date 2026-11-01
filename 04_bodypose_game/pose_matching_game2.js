@@ -1014,3 +1014,9 @@ function drawSuccessEffect() {
 function drawGameUI(timeLeft) {
     drawSuccessEffect();
 }
+
+
+function endRound() {
+    roundNumber += 1;
+    
+}
