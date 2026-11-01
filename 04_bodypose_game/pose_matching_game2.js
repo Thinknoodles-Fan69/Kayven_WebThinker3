@@ -1037,8 +1037,6 @@ function endRound() {
 
     if (roundNumber < totalRounds) {
         startRound();
-    } else {
-        gameComplete = true;
     }
 }
 
