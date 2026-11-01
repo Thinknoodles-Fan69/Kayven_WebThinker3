@@ -72,6 +72,8 @@ let totalRounds = 5;
 let roundNumber = 0;
 let gameComplete = false;
 
+let secondsPerRound = 8;
+
 
 // ====================================================
 // ML5 body tracking variables
