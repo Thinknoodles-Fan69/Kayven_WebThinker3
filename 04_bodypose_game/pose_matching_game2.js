@@ -73,6 +73,7 @@ let roundNumber = 0;
 let gameComplete = false;
 
 let secondsPerRound = 8;
+let roundStartTime = 0;
 
 
 // ====================================================
