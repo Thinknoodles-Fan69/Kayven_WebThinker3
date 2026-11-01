@@ -182,7 +182,8 @@ function setup() {
     // Set up text.
     textAlign(CENTER, CENTER);
 
-    makePoseOeredw
+    makePoseOrder();
+    startRound();
 }
 
 
