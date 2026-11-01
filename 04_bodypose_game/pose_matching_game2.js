@@ -1034,3 +1034,11 @@ function endRound() {
     }
 
 }
+
+function startRound() {
+    currentPose = PoseList[roundNumber];
+
+    player1Scored === false;
+    player2Scored === false;
+    successEffectPlayer = 0;
+}
