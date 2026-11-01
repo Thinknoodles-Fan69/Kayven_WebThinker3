@@ -1062,6 +1062,7 @@ function startRound() {
     successEffectPlayer = 0;
 
     roundStartTime = millis();
+    
 }
 
 function makePoseOrder() {
