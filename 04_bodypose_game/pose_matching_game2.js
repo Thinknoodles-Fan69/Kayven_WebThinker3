@@ -602,15 +602,15 @@ function drawSharedGameUI() {
 
     fill(255);
     textSize(28);
-    text("Round" + (roundNumber + 1) + " / " + totalRounds, width/2, 20);
+    text("Round" + (roundNumber + 1) + " / " + totalRounds, width/2, 25);
 
     fill(255);
     textSize(24);
-    text("Match this pose!", width / 2, 40);
+    text("Match this pose!", width / 2, 60);
 
     fill(255, 220, 80);
     textSize(28);
-    text(currentPose.name, width / 2, 70);
+    text(currentPose.name, width / 2, 80);
 
     drawTargetPose(currentPose.image, width / 2, height / 2 + 55, 238);
 
