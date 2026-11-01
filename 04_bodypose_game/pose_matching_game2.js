@@ -616,7 +616,7 @@ function drawSharedGameUI() {
 
     fill(255);
     textSize(28);
-    text("Round" + (roundNumber + 1) + " / " + totalRounds, width/2, 67);
+    text("Round" + (roundNumber + 1) + " / " + totalRounds, width/2, 21);
 
 
 }
