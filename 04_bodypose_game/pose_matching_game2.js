@@ -68,6 +68,8 @@ let successEffectDuration = 900;
 
 let successEffectPlayer = 0;
 
+let T
+
 
 // ====================================================
 // ML5 body tracking variables
