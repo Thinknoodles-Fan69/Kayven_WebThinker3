@@ -625,7 +625,7 @@ function drawSharedGameUI(timeLeft) {
 
     textSize(30);
     fill("orange");
-    text("Time: " + ceil(timeLeft), width / 2, 94);
+    text("Time: " + ceil(timeLeft), width / 2, 110);
 }
 
 
