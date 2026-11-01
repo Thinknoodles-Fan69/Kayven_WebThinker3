@@ -934,8 +934,10 @@ function runPlayState() {
     checkPlayerScores();
 
     if(player1Scored === true || player2Scored === true) {
-        
+        let effectTime = millis() - successEffectStartTime;
     }
+
+    
 }
 
 function drawGameUI() {
