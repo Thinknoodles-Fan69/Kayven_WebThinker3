@@ -614,9 +614,7 @@ function drawSharedGameUI() {
     textSize(18);
     text("Poses 5 to test to press 1", width / 2, height - 30);
 
-    fill(255);
-    textSize(28);
-    text("Round" + (roundNumber + 1) + " / " + totalRounds, width/2, 10);
+    
 
 
 }
