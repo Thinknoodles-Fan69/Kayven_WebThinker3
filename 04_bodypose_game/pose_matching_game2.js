@@ -937,7 +937,9 @@ function keyPressed() {
     //     currentPose = poseList[4];
     // }
 
-    if (key === " ")
+    if (key === " ") {
+        startGame();
+    }
 
 }
 
