@@ -1018,5 +1018,8 @@ function drawGameUI(timeLeft) {
 
 function endRound() {
     roundNumber += 1;
-    
+
+    if (roundNumber < totalRounds) {
+        startRound();
+    }
 }
