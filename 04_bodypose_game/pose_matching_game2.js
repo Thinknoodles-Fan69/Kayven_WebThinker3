@@ -624,12 +624,10 @@ function drawSharedGameUI(timeLeft) {
     text("Poses 5 to test to press 1", width / 2, height - 30);
 
     textSize(30);
-    fill("orange")
-
-    
-
-
+    fill("orange");
+    text("Time: "timeLeft, width / 2, height - 10);
 }
+
 
 function drawTargetPose(poseImage, x, y, size) {
 
