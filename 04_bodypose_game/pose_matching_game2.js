@@ -75,6 +75,8 @@ let roundNumber = 0;
 let secondsPerRound = 8;
 let roundStartTime = 0;
 
+let poseOrder = [];
+
 
 // ====================================================
 // ML5 body tracking variables
