@@ -959,9 +959,7 @@ function runPlayState() {
 
 }
 
-function drawGameUI(timeLeft) {
-    drawSharedGameUI(timeLeft);
-} 
+
 
 function drawPlayerPanel(playerName, panelCenterX, score, playerColor) {
     noStroke();
