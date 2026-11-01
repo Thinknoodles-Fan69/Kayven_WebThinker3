@@ -1069,4 +1069,10 @@ function makePoseOrder() {
         copyList.push(poseList[i]);
     }
 
+    for (let i = 0; i < totalRounds; i++) {
+
+        let 
+    }
+        
+
 }
