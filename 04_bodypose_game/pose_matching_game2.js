@@ -616,7 +616,7 @@ function drawSharedGameUI() {
 
     fill(255);
     textSize(28);
-    text("Poses 5 to test to press 1", width / 2, height - 30);
+    text("Round" + (roundNumber + 1));
 
 
 }
