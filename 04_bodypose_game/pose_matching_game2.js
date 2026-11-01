@@ -1037,6 +1037,7 @@ function drawSuccessEffect() {
 }
 
 function drawGameUI(timeLeft) {
+
     drawSuccessEffect();
 }
 
