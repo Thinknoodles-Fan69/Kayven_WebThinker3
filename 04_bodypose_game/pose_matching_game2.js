@@ -54,6 +54,20 @@ let player1Color;
 // Player 2 colour.
 let player2Color;
 
+let player1Score = 0;
+let player2Score = 0;
+let pointsForFirstMatch = 100;
+
+let player1Scored = false;
+let player2Scored = false;
+
+let scoreImg;
+
+let successEffectStartTime = 0;
+let successEffectDuration = 900;
+
+let successEffectPlayer = 0;
+
 
 // ====================================================
 // ML5 body tracking variables
@@ -107,6 +121,7 @@ function preload() {
     rightHandUpImg = loadImage("assets/poseBattle_rightHandUp.png");
     tPoseImg = loadImage("assets/poseBattle_tpose.png");
     handsOnHeadImg = loadImage("assets/poseBattle_handsOnHead.png");
+    scoreImg = loadImage("assets/poseBattle_points.png")
 }
 
 
@@ -184,12 +199,18 @@ function draw() {
     drawMiddleLine();
 
     // Draw Player 1 and Player 2 status.
-    drawPlayerStatus();
+    //drawPlayerStatus();
 
     // Draw detection status.
-    drawDetectionStatus();
+    // drawDetectionStatus();
 
     drawSharedGameUI();
+
+    runPlayState();
+
+    drawPlayerPanel("Player 1", leftPanelCenterX, player1Score, player1Color);
+    drawPlayerPanel("Player 2", rightPanelCenterX, player2Score, player2Color);
+
 }
 
 
@@ -319,6 +340,15 @@ function drawPlayerStatus() {
     // Draw Player 2 status.
     if (player2Person !== null) {
         text("Detected", rightPanelCenterX, 125);
+
+        if (checkCurrentPose(player2Person) === true) {
+            fill(80, 255, 120);
+            text("Pose matched!", rightPanelCenterX, 170);
+        } else {
+            fill(255);
+            text("Pose not matched", rightPanelCenterX, 170);
+        }
+
     } else {
         text("Not detected", rightPanelCenterX, 125);
     }
@@ -589,4 +619,387 @@ function drawTargetPose(poseImage, x, y, size) {
     image(poseImage, x, y, size, size);
 
     imageMode(CORNER);
+
+}
+
+function checkCurrentPose(person) {
+    if (currentPose === null || currentPose === undefined) {
+        return false;
+    }
+    if (currentPose.id = "bothHandsUp") {
+        return checkBothHandsUp(person);
+    } else if (currentPose.id = "leftHandUp") {
+        return checkLeftHandUp(person);
+    } else if (currentPose.id = "rightHandUp") {
+        return checkRightHandUp(person);
+    } else if (currentPose.id = "tPose") {
+        return checkTPose(person);
+    } else if (currentPose.id = "handsOnHead") {
+        return checkHandsOnHead(person);
+    } else {
+        return false;
+    }
+
+}
+
+
+
+function checkBothHandsUp(person) {
+    let leftWrist = person.left_wrist;
+    let rightWrist = person.right_wrist;
+    let leftShoulder = person.left_shoulder;
+    let rightShoulder = person.right_shoulder;
+    let nose = person.nose;
+
+    if (pointIsReady(leftWrist) === false) {
+        return false;
+    }
+
+    if (pointIsReady(rightWrist) === false) {
+        return false;
+    }
+
+    if (pointIsReady(leftShoulder) === false) {
+        return false;
+    }
+
+    if (pointIsReady(rightShoulder) === false) {
+        return false;
+    }
+
+    if (pointIsReady(nose) === false) {
+        return false;
+    }
+
+    let shoulderWidth = abs(leftShoulder.x - rightShoulder.x);
+    let margin = shoulderWidth * 0.25;
+
+    let leftHandHigh = false;
+    let rightHandHigh = false;
+
+    if (leftWrist.y < nose.y - margin) {
+        leftHandHigh = true;
+    }
+
+    if (rightWrist.y < nose.y - margin) {
+        rightHandHigh = true;
+    }
+
+    if (leftHandHigh === true && rightHandHigh === true) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+// Checks whether only the left hand is up.
+function checkLeftHandUp(person) {
+    let leftWrist = person.left_wrist;
+    let rightWrist = person.right_wrist;
+    let leftShoulder = person.left_shoulder;
+    let rightShoulder = person.right_shoulder;
+
+    if (pointIsReady(leftWrist) === false) {
+        return false;
+    }
+
+    if (pointIsReady(rightWrist) === false) {
+        return false;
+    }
+
+    if (pointIsReady(leftShoulder) === false) {
+        return false;
+    }
+
+    if (pointIsReady(rightShoulder) === false) {
+        return false;
+    }
+
+    let shoulderWidth = abs(leftShoulder.x - rightShoulder.x);
+    let margin = shoulderWidth * 0.25;
+
+    let leftIsUp = false;
+    let rightIsDown = false;
+
+    if (leftWrist.y < leftShoulder.y - margin) {
+        leftIsUp = true;
+    }
+
+    if (rightWrist.y > rightShoulder.y + margin) {
+        rightIsDown = true;
+    }
+
+    if (leftIsUp === true && rightIsDown === true) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+// Checks whether only the right hand is up.
+function checkRightHandUp(person) {
+    let leftWrist = person.left_wrist;
+    let rightWrist = person.right_wrist;
+    let leftShoulder = person.left_shoulder;
+    let rightShoulder = person.right_shoulder;
+
+    if (pointIsReady(leftWrist) === false) {
+        return false;
+    }
+
+    if (pointIsReady(rightWrist) === false) {
+        return false;
+    }
+
+    if (pointIsReady(leftShoulder) === false) {
+        return false;
+    }
+
+    if (pointIsReady(rightShoulder) === false) {
+        return false;
+    }
+
+    let shoulderWidth = abs(leftShoulder.x - rightShoulder.x);
+    let margin = shoulderWidth * 0.25;
+
+    let rightIsUp = false;
+    let leftIsDown = false;
+
+    if (rightWrist.y < rightShoulder.y - margin) {
+        rightIsUp = true;
+    }
+
+    if (leftWrist.y > leftShoulder.y + margin) {
+        leftIsDown = true;
+    }
+
+    if (rightIsUp === true && leftIsDown === true) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+// Checks whether both arms are stretched sideways like a T.
+function checkTPose(person) {
+    let leftWrist = person.left_wrist;
+    let rightWrist = person.right_wrist;
+    let leftShoulder = person.left_shoulder;
+    let rightShoulder = person.right_shoulder;
+
+    if (pointIsReady(leftWrist) === false) {
+        return false;
+    }
+
+    if (pointIsReady(rightWrist) === false) {
+        return false;
+    }
+
+    if (pointIsReady(leftShoulder) === false) {
+        return false;
+    }
+
+    if (pointIsReady(rightShoulder) === false) {
+        return false;
+    }
+
+    let shoulderWidth = abs(leftShoulder.x - rightShoulder.x);
+    let levelMargin = shoulderWidth * 0.5;
+
+    let leftWristLevel = false;
+    let rightWristLevel = false;
+    let armsAreWide = false;
+
+    if (abs(leftWrist.y - leftShoulder.y) < levelMargin) {
+        leftWristLevel = true;
+    }
+
+    if (abs(rightWrist.y - rightShoulder.y) < levelMargin) {
+        rightWristLevel = true;
+    }
+
+    let wristDistance = abs(leftWrist.x - rightWrist.x);
+
+    if (wristDistance > shoulderWidth * 2) {
+        armsAreWide = true;
+    }
+
+    if (leftWristLevel === true && rightWristLevel === true && armsAreWide === true) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+// Checks whether both hands are near the head.
+function checkHandsOnHead(person) {
+    let leftWrist = person.left_wrist;
+    let rightWrist = person.right_wrist;
+    let leftShoulder = person.left_shoulder;
+    let rightShoulder = person.right_shoulder;
+    let nose = person.nose;
+
+    if (pointIsReady(leftWrist) === false) {
+        return false;
+    }
+
+    if (pointIsReady(rightWrist) === false) {
+        return false;
+    }
+
+    if (pointIsReady(leftShoulder) === false) {
+        return false;
+    }
+
+    if (pointIsReady(rightShoulder) === false) {
+        return false;
+    }
+
+    if (pointIsReady(nose) === false) {
+        return false;
+    }
+
+    let shoulderWidth = abs(leftShoulder.x - rightShoulder.x);
+
+    let closeToHeadDistance = shoulderWidth * 0.8;
+    let headHeightMargin = shoulderWidth * 0.45;
+    let aboveShoulderMargin = shoulderWidth * 0.3;
+
+    let leftHandNearHead = false;
+    let rightHandNearHead = false;
+
+    let leftDistanceFromHead = dist(leftWrist.x, leftWrist.y, nose.x, nose.y);
+    let rightDistanceFromHead = dist(rightWrist.x, rightWrist.y, nose.x, nose.y);
+
+    if (
+        leftDistanceFromHead < closeToHeadDistance &&
+        abs(leftWrist.y - nose.y) < headHeightMargin &&
+        leftWrist.y < leftShoulder.y - aboveShoulderMargin
+    ) {
+        leftHandNearHead = true;
+    }
+
+    if (
+        rightDistanceFromHead < closeToHeadDistance &&
+        abs(rightWrist.y - nose.y) < headHeightMargin &&
+        rightWrist.y < rightShoulder.y - aboveShoulderMargin
+    ) {
+        rightHandNearHead = true;
+    }
+
+    if (leftHandNearHead === true && rightHandNearHead === true) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function keyPressed() {
+    if (key === "1") {
+        currentPose = poseList[0];
+    }
+    if (key === "2") {
+        currentPose = poseList[1];
+    }
+    if (key === "3") {
+        currentPose = poseList[2];
+    }
+    if (key === "4") {
+        currentPose = poseList[3];
+    }
+    if (key === "5") {
+        currentPose = poseList[4];
+    }
+
+}
+
+
+function runPlayState() {
+    drawGameUI();
+    checkPlayerScores();
+}
+
+function drawGameUI() {
+    drawSharedGameUI();
+} 
+
+function drawPlayerPanel(playerName, panelCenterX, score, playerColor) {
+    noStroke();
+
+    fill(playerColor);
+    textSize(24);
+    text(playerName, panelCenterX, 70);
+
+    fill(255);
+    textSize(30);
+    text("Score", panelCenterX, 120);
+
+    textSize(40);
+    text(score, panelCenterX, 160);
+}
+
+function checkPlayerScores() {
+    if (player1Person !== null && player1Scored === false && player2Scored === false) {
+        if (checkCurrentPose(player1Person) === true) {
+            player1Score += pointsForFirstMatch;
+
+            player1Scored = true;
+
+            successEffectPlayer = 1;
+            successEffectStartTime = millis();
+
+            return;
+        }
+    }
+
+    if (player2Person !== null && player1Scored === false && player2Scored === false) {
+        if (checkCurrentPose(player2Person) === true) {
+            player2Score += pointsForFirstMatch;
+
+            player2Scored = true;
+
+            successEffectPlayer = 2;
+            successEffectStartTime = millis();
+
+            return;
+        }
+    }
+}
+
+function drawSuccessEffect() {
+    if(successEffectPlayer === 0) {
+        return;
+    }
+
+    let effectTime = millis() -successEffectStartTime;
+
+    if (effectTime > successEffectDuration) {
+        return;
+    }
+
+    let flashTime = effectTime % 300;
+
+    if (flashTime > 150) {
+        return;
+    }
+
+    let effectX;
+
+    if (successEffectPlayer === 1) {
+        effectX = cameraX + cameraWidth / 4;
+    } else {
+        effectX = cameraX + cameraWidth * 3 / 4;
+    }
+
+    imageMode(CENTER);
+    image(scoreImg, effectX, height / 2, 512, 256);
+    imageMode(CORNER);
+}
+
+function drawGameUI(timeLeft) {
+    drawSuccessEffect();
 }
