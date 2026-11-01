@@ -1055,14 +1055,14 @@ function endRound() {
 }
 
 function startRound() {
-    currentPose = poseList[roundNumber];
+    currentPose = poseOrder[roundNumber];
 
     player1Scored = false;
     player2Scored = false;
     successEffectPlayer = 0;
 
     roundStartTime = millis();
-    
+
 }
 
 function makePoseOrder() {
