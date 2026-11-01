@@ -1063,5 +1063,6 @@ function startRound() {
 
 function makePoseOrder() {
     poseOrder = [];
-    
+    let copyList = [];
+
 }
