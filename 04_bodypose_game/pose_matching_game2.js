@@ -1038,6 +1038,7 @@ function endRound() {
     if (roundNumber < totalRounds) {
         startRound();
     }
+    
 }
 
 function startRound() {
