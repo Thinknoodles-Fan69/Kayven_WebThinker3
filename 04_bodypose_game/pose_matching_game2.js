@@ -948,6 +948,8 @@ function runPlayState() {
         return;
     }
 
+    let elapsed
+
 }
 
 function drawGameUI(timeLeft) {
@@ -1038,7 +1040,7 @@ function endRound() {
     if (roundNumber < totalRounds) {
         startRound();
     }
-    
+
 }
 
 function startRound() {
