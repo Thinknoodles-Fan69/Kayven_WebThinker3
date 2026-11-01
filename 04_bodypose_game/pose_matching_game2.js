@@ -136,7 +136,7 @@ function preload() {
 function setup() {
     setupPoseList();
     // currentPose = poseList[0];
-    startRound()
+    startRound();
 
     // Create the full canvas.
     createCanvas(totalCanvasWidth, cameraHeight);
