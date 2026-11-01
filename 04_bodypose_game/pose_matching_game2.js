@@ -1075,7 +1075,7 @@ function makePoseOrder() {
 
         poseOrder.push(copyList[randomIndex]);
 
-        copyList.splice(randomIndex, 1);
+        copyList.splice(randomIndex, 1); 
     }
         
 
