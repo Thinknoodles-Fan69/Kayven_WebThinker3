@@ -1037,7 +1037,7 @@ function endRound() {
 }
 
 function startRound() {
-    currentPose = PoseList[roundNumber];
+    currentPose = poseList[roundNumber];
 
     player1Scored === false;
     player2Scored === false;
