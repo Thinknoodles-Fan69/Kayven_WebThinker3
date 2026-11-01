@@ -1033,16 +1033,7 @@ function drawGameUI(timeLeft) {
 
 
 function endRound() {
-    if (gameComplete === true) {
-        return;
-    }
-
-    if (roundNumber + 1 < totalRounds) {
-        roundNumber += 1;
-        startRound();
-    } else {
-        gameComplete = true;
-    }
+    roundNumber += 1;
 
 }
 
