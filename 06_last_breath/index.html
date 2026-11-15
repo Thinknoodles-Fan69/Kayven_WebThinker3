@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101b18" />
+    <title>LAST BREATH</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.3/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5play/3.26.5/planck.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5play/3.26.5/p5play.js"></script>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #101b18;
+        color: #f3f5e9;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-width: 320px;
+        min-height: 100vh;
+        overflow: hidden;
+      }
+
+      canvas {
+        position: fixed;
+        inset: 0;
+        display: block;
+        z-index: 0 !important;
+        pointer-events: none;
+      }
+
+      #game-ui {
+        position: fixed;
+        inset: 0;
+        z-index: 10;
+        isolation: isolate;
+        pointer-events: none;
+      }
+
+      #hud {
+        position: absolute;
+        inset: 0 0 auto;
+        z-index: 10;
+        display: none;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 18px;
+      }
+
+      .hud-card {
+        width: min(290px, 44vw);
+        padding: 14px 16px;
+        border: 1px solid #ffffff2b;
+        border-radius: 12px;
+        background: #101b18dc;
+        box-shadow: 0 8px 26px #0005;
+      }
+
+      .hud-title {
+        margin: 0 0 10px;
+        color: #d7edb4;
+        font-size: 13px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .bar-row {
+        display: grid;
+        grid-template-columns: 58px 1fr;
+        align-items: center;
+        gap: 9px;
+        margin: 7px 0;
+        color: #e7eadf;
+        font-size: 12px;
+      }
+
+      .bar {
+        height: 9px;
+        overflow: hidden;
+        border-radius: 99px;
+        background: #ffffff24;
+      }
+
+      .bar-fill {
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+        transition: width 120ms linear;
+      }
+
+      #health-fill {
+        background: #e66655;
+      }
+
+      #xp-fill {
+        background: #67f49b;
+        box-shadow: 0 0 8px #67f49b88;
+      }
+
+      .xp-meter {
+        display: grid;
+        grid-template-columns: minmax(36px, 1fr) auto;
+        align-items: center;
+        gap: 8px;
+      }
+
+      #xp-value {
+        min-width: 46px;
+        color: #bceecb;
+        font-size: 11px;
+        font-variant-numeric: tabular-nums;
+        text-align: right;
+      }
+
+      .hud-stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 14px;
+        margin-top: 12px;
+        color: #e7eadf;
+        font-size: 13px;
+      }
+
+      #right-hud {
+        text-align: right;
+      }
+
+      #right-hud .hud-title {
+        margin-bottom: 6px;
+      }
+
+      #timer {
+        font-size: clamp(24px, 4vw, 36px);
+        font-weight: 800;
+        font-variant-numeric: tabular-nums;
+      }
+
+      #wave-label {
+        margin-top: 5px;
+        color: #d7edb4;
+        font-size: 14px;
+      }
+
+      #controls-hint {
+        margin-top: 11px;
+        color: #c2cbbc;
+        font-size: 12px;
+      }
+
+      #overlay {
+        position: absolute;
+        inset: 0;
+        z-index: 20;
+        display: grid;
+        place-items: center;
+        padding: 20px;
+        background: #08100dc2;
+        pointer-events: auto;
+      }
+
+      #overlay[hidden] {
+        display: none;
+      }
+
+      .panel {
+        width: min(520px, 100%);
+        padding: clamp(24px, 5vw, 42px);
+        border: 1px solid #d7edb455;
+        border-radius: 18px;
+        background: linear-gradient(150deg, #1d3028, #111b18);
+        box-shadow: 0 24px 80px #0009;
+        text-align: center;
+      }
+
+      .eyebrow {
+        margin: 0 0 8px;
+        color: #b6d79d;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+      }
+
+      .panel h1,
+      .panel h2 {
+        margin: 0;
+        color: #f3f5e9;
+        font-size: clamp(32px, 8vw, 54px);
+        letter-spacing: 0.06em;
+      }
+
+      .panel h2 {
+        font-size: clamp(25px, 6vw, 34px);
+        letter-spacing: 0.02em;
+      }
+
+      .panel-copy {
+        margin: 16px auto 22px;
+        max-width: 390px;
+        color: #d0d7ca;
+        line-height: 1.6;
+      }
+
+      .button {
+        display: inline-block;
+        min-width: 170px;
+        padding: 13px 20px;
+        border: 0;
+        border-radius: 9px;
+        background: #b5d98d;
+        color: #142018;
+        cursor: pointer;
+        font: inherit;
+        font-weight: 800;
+        transition: transform 120ms ease, background 120ms ease;
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+        background: #c8e8a4;
+      }
+
+      .button:focus-visible {
+        outline: 3px solid white;
+        outline-offset: 3px;
+      }
+
+      .upgrade-list {
+        display: grid;
+        gap: 10px;
+        margin-top: 22px;
+        max-height: min(52vh, 430px);
+        overflow-y: auto;
+      }
+
+      .upgrade-button {
+        width: 100%;
+        padding: 14px 16px;
+        border: 1px solid #d7edb455;
+        border-radius: 10px;
+        background: #ffffff0b;
+        color: #f3f5e9;
+        cursor: pointer;
+        text-align: left;
+      }
+
+      .upgrade-button:hover {
+        border-color: #b5d98d;
+        background: #b5d98d18;
+      }
+
+      .upgrade-button strong,
+      .upgrade-button span {
+        display: block;
+      }
+
+      .upgrade-button strong {
+        margin-bottom: 5px;
+        color: #d7edb4;
+        font-size: 15px;
+      }
+
+      .upgrade-button span {
+        color: #c2cbbc;
+        font-size: 13px;
+        line-height: 1.4;
+      }
+
+      .loadout {
+        position: absolute;
+        bottom: 18px;
+        left: 50%;
+        display: flex;
+        gap: 7px;
+        width: min(920px, calc(100vw - 24px));
+        overflow-x: auto;
+        padding: 5px;
+        transform: translateX(-50%);
+        scrollbar-width: thin;
+        pointer-events: auto;
+      }
+
+      .weapon-slot {
+        display: grid;
+        min-width: 118px;
+        min-height: 58px;
+        align-content: center;
+        gap: 4px;
+        padding: 7px 9px;
+        border: 1px solid #ffffff36;
+        border-radius: 9px;
+        background: #101b18e8;
+      }
+
+      .weapon-slot strong {
+        overflow: hidden;
+        color: #f3f5e9;
+        font-size: 11px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .weapon-slot span {
+        color: #d7edb4;
+        font-size: 10px;
+      }
+
+      .weapon-slot.empty {
+        border-style: dashed;
+        background: #101b1888;
+      }
+
+      .results {
+        margin: 18px auto 22px;
+        color: #d7edb4;
+        line-height: 1.8;
+      }
+
+      .back-link {
+        position: fixed;
+        right: 18px;
+        bottom: 14px;
+        z-index: 11;
+        color: #e7eadf;
+        font-size: 12px;
+        opacity: 0.75;
+        pointer-events: auto;
+      }
+
+      @media (max-width: 520px) {
+        #hud {
+          gap: 8px;
+          padding: 10px;
+        }
+
+        .hud-card {
+          padding: 10px;
+        }
+
+        .loadout {
+          bottom: 34px;
+          gap: 5px;
+        }
+
+        .weapon-slot {
+          min-width: 100px;
+          min-height: 50px;
+        }
+
+        .hud-stats {
+          gap: 6px 9px;
+          font-size: 11px;
+        }
+
+        #controls-hint {
+          max-width: 145px;
+          line-height: 1.4;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main id="game-ui">
+      <section id="hud" aria-label="Game status">
+        <div class="hud-card">
+          <p class="hud-title">LAST BREATH</p>
+          <div class="bar-row">
+            <span>Health</span>
+            <div class="bar" role="progressbar" aria-label="Health">
+              <div id="health-fill" class="bar-fill"></div>
+            </div>
+          </div>
+          <div class="bar-row">
+            <span>XP · Lv <span id="level">1</span></span>
+            <div class="xp-meter">
+              <div class="bar" role="progressbar" aria-label="Experience">
+                <div id="xp-fill" class="bar-fill"></div>
+              </div>
+              <span id="xp-value">0 / 20</span>
+            </div>
+          </div>
+          <div class="hud-stats">
+            <span id="coins">Coins: 0</span>
+            <span id="kills">Kills: 0</span>
+          </div>
+          <div id="controls-hint">Move with W, A, S, D. Your weapon fires automatically.</div>
+        </div>
+        <div id="right-hud" class="hud-card">
+          <p class="hud-title">Survive until dawn</p>
+          <div id="timer">08:00</div>
+          <div id="wave-label">Wave 1</div>
+        </div>
+      </section>
+
+      <div id="weapon-loadout" class="loadout" aria-label="Weapons equipped"></div>
+
+      <section id="overlay" aria-live="polite">
+        <div id="panel" class="panel">
+          <p class="eyebrow">A FOREST THAT NEVER SLEEPS</p>
+          <h1>LAST BREATH</h1>
+          <p class="panel-copy">
+            Monsters are closing in. Move with <strong>W, A, S, D</strong>, gather the
+            fallen’s XP and coins, and choose upgrades between attacks. Hold out until
+            dawn to escape.
+          </p>
+          <button id="start-button" class="button" type="button">Enter the forest</button>
+        </div>
+      </section>
+    </main>
+    <a class="back-link" href="../index.html">Back to homepage</a>
+    <script src="last_breath.js"></script>
+  </body>
+</html>
