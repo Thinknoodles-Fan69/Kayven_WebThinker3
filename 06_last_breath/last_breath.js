@@ -467,12 +467,20 @@ function updateEnemies(deltaSeconds) {
 
 function updateWeapons(deltaSeconds) {
   for (const weapon of playerWeapons) {
+    if (weapon.id === "guardian") {
+      updateGuardianOrbit(weapon, deltaSeconds);
+      weapon.gameCooldown = Math.max(0, weapon.gameCooldown - deltaSeconds);
+      if (weapon.gameCooldown <= 0) {
+        attackWithGuardian(weapon);
+        weapon.gameCooldown = getWeaponCooldown(weapon);
+      }
+      continue;
+    }
+
     weapon.gameCooldown = Math.max(0, weapon.gameCooldown - deltaSeconds);
     if (weapon.gameCooldown > 0) continue;
 
-    if (weapon.id === "guardian") {
-      attackWithGuardian(weapon);
-    } else if (weapon.id === "forcefield") {
+    if (weapon.id === "forcefield") {
       attackWithForcefield(weapon);
     } else {
       const target = findNearestEnemy(weapon.id === "pistol" ? 520 : 680);
@@ -488,6 +496,8 @@ function updateWeapons(deltaSeconds) {
 function updateProjectiles(deltaSeconds) {
   for (const projectile of projectileSprites) {
     if (!projectile.gameIsActive) continue;
+    if (projectile.gameType === "guardianOrbit") continue;
+
     projectile.gameLifetime -= deltaSeconds;
     projectile.gameDamageClock = Math.max(0, projectile.gameDamageClock - deltaSeconds);
 
@@ -862,13 +872,30 @@ function explodeProjectile(projectile, radius = projectile.gameRadius || 90) {
   removeProjectile(projectile);
 }
 
-function attackWithGuardian(weapon) {
-  weapon.gameOrbitAngle += 0.9 + weapon.level * 0.12;
+function updateGuardianOrbit(weapon, deltaSeconds) {
+  weapon.gameOrbitAngle += (0.9 + weapon.level * 0.12) / getWeaponCooldown(weapon) * deltaSeconds;
   const orbitRadius = 45 + weapon.level * 6;
-  const bladeX = playerSprite.x + Math.cos(weapon.gameOrbitAngle) * orbitRadius;
-  const bladeY = playerSprite.y + Math.sin(weapon.gameOrbitAngle) * orbitRadius;
+  let blade = weapon.gameGuardianSprite;
+  if (!blade || !blade.gameIsActive) {
+    blade = createEffectSprite(playerSprite.x, playerSprite.y, 20, weapon.color, "guardianBlade");
+    blade.img = getWeaponImage("guardian", weapon.color);
+    blade.color = "#ffffff";
+    blade.stroke = "transparent";
+    blade.gameType = "guardianOrbit";
+    weapon.gameGuardianSprite = blade;
+  }
+
+  blade.x = playerSprite.x + Math.cos(weapon.gameOrbitAngle) * orbitRadius;
+  blade.y = playerSprite.y + Math.sin(weapon.gameOrbitAngle) * orbitRadius;
+  blade.rotation = weapon.gameOrbitAngle * 180 / Math.PI + 90;
+}
+
+function attackWithGuardian(weapon) {
+  const blade = weapon.gameGuardianSprite;
+  if (!blade?.gameIsActive) return;
+
   const target = enemySprites.find((enemy) =>
-    enemy.gameIsAlive && Math.hypot(enemy.x - bladeX, enemy.y - bladeY) < enemy.gameEnemyRadius + 20
+    enemy.gameIsAlive && Math.hypot(enemy.x - blade.x, enemy.y - blade.y) < enemy.gameEnemyRadius + 20
   );
   if (target) {
     damageEnemy(target, getWeaponDamage(weapon));
@@ -877,12 +904,6 @@ function attackWithGuardian(weapon) {
     target.x += Math.cos(angle) * knockback;
     target.y += Math.sin(angle) * knockback;
   }
-
-  const blade = createEffectSprite(bladeX, bladeY, 20, weapon.color, "guardianBlade");
-  blade.img = getWeaponImage("guardian", weapon.color);
-  blade.color = "#ffffff";
-  blade.stroke = "transparent";
-  blade.gameLifetime = 0.12;
 }
 
 function attackWithForcefield(weapon) {
